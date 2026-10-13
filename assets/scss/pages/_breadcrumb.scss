@@ -1,0 +1,101 @@
+// breadcrumb-section css
+
+.breadcrumb-5 {
+    &__wrapper {
+        padding-top: 135px;
+        @media #{$md} {
+            padding-top: 60px;
+        }
+    }
+
+    &__content {
+        .title {
+            font-weight: 600;
+            font-size: 100px;
+            line-height: 1;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+            margin-bottom: 17px;
+            @media #{$md} {
+                font-size: 60px;
+            }
+            @media #{$sm} {
+                font-size: 50px;
+                margin-bottom: 15px;
+            }
+            @media #{$xs} {
+                font-size: 35px;
+                margin-bottom: 10px;
+            }
+        }
+
+        .decs {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 32px;
+            font-family: var(--font_bai-jamjuree);
+        }
+    }
+}
+
+
+.breadcrumb-6 {
+    &__wrapper {
+        padding-top: 135px;
+        @media #{$md} {
+            padding-top: 60px;
+        }
+    }
+
+    &__content {
+        text-align: center;
+        .title {
+            font-weight: 600;
+            font-size: 100px;
+            line-height: 1;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+            margin-bottom: 17px;
+            @media #{$md} {
+                font-size: 60px;
+            }
+            @media #{$sm} {
+                font-size: 50px;
+                margin-bottom: 15px;
+            }
+            @media #{$xs} {
+                font-size: 35px;
+                margin-bottom: 10px;
+            }
+        }
+
+        .decs {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 32px;
+            font-family: var(--font_bai-jamjuree);
+            margin-bottom: 120px;
+        }
+        .last-update{
+            font-family: var(--font_dm-sans);
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 32px;
+            color: rgba(17, 17, 17, 0.7);
+            position: relative;
+            &::before{
+                position: absolute;
+                content: '';
+                left: 50%;
+                top: -100px;
+                transform: translateX(-50%);
+                height: 73px;
+                width: 1px;
+                background: rgba(17, 17, 17, 0.1);
+            }
+        }
+        .date{
+            color: var(--primary);
+        }
+    }
+}

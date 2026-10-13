@@ -1,0 +1,30 @@
+.section-title {
+    margin-bottom: 70px;
+    text-align: center;
+    @media #{$md} {
+        margin-bottom: 40px;
+    }
+    .title {
+        font-weight: 600;
+        font-size: 100px;
+        line-height: 90px;
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+        @media #{$lg} {
+            font-size: 80px;
+            line-height: 90px;
+        }
+        @media #{$md} {
+            font-size: 65px;
+            line-height: 69px;
+        }
+        @media #{$sm} {
+            font-size: 45px;
+            line-height: 52px;
+        }
+        @media #{$xs} {
+            font-size: 30px;
+            line-height: 36px;
+        }
+    }
+}

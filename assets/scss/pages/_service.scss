@@ -1,0 +1,345 @@
+.service-page {
+    &__item {
+        position: relative;
+        display: grid;
+        grid-template-columns: 377px 440px 610px 1fr;
+        grid-template-rows: auto 1fr;
+        column-gap: 65px;
+        overflow: hidden;
+        border-top: 1px solid rgba(17, 17, 17, 0.1);
+        &:last-child {
+            border-bottom: 1px solid rgba(17, 17, 17, 0.1);
+        }
+
+        .is-ready & {
+            transition: height .6s cubic-bezier(.65, 0, .35, 1);
+        }
+        padding: 50px 0 30px 0;
+        @media #{$xxl} {
+            grid-template-columns: 322px 353px 579px 11fr;
+            column-gap: 30px;
+        }
+        @media #{$xl} {
+            grid-template-columns: 259px 290px 494px 1fr;
+        }
+        @media #{$lg} {
+            grid-template-columns: 229px 247px 385px 1fr;
+        }
+    }
+    &__icon {
+        grid-column: 4;
+        grid-row: 1;
+        position: relative;
+        justify-self: end;
+        width: 16px;
+        height: 16px;
+        pointer-events: none; // click trigger::after e jabe
+    
+        // baki ager moto
+    }
+    // ---------- row 1 ----------
+    &__num {
+        grid-column: 1;
+        grid-row: 1;
+        font-weight: 500;
+        font-size: 50px;
+        line-height: 35px;
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+        color: #111111;
+        font-family: var(--font_tasa-orbiter);
+        line-height: 1.2;
+        margin-bottom: 155px;
+    }
+
+    &__head {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    &__trigger {
+        all: unset;
+        display: block;
+        cursor: pointer;
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0 0 auto 0;
+            height: var(--collapsed, 100px);
+        }
+
+        &:focus-visible::after {
+            outline: 2px solid #111;
+            outline-offset: -2px;
+        }
+    }
+
+    &__title {
+        margin: 0;
+        font-weight: 500;
+        font-size: 50px;
+        line-height: 35px;
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+        color: #111111;
+        margin-bottom: 35px;
+        @media #{$xxl} {
+            font-size: 39px;
+            line-height: 35px;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+            color: #111111;
+            margin-bottom: 7px;
+        }
+        @media #{$xl} {
+            font-size: 30px;
+            line-height: 35px;
+        }
+        @media #{$lg} {
+            font-size: 27px;
+            line-height: 35px;
+        }
+    }
+
+    &__price {
+        margin: 12px 0 0;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 110%;
+        letter-spacing: -0.06em;
+        color: rgba(17, 17, 17, 0.7);
+
+        strong {
+            font-weight: 600;
+            font-size: 28px;
+            line-height: 110%;
+            letter-spacing: -0.06em;
+            color: #111111;
+            font-family: var(--font_tasa-orbiter);
+        }
+    }
+
+    &__icon {
+        grid-column: 4;
+        grid-row: 1;
+        position: relative;
+        justify-self: end;
+        width: 16px;
+        height: 16px;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            background: #111;
+            transition: transform .4s cubic-bezier(.65, 0, .35, 1);
+        }
+
+        &::before {
+            left: 0;
+            top: 5.5px;
+            width: 100%;
+            height: 2px;
+        }
+
+        &::after {
+            left: 7.5px;
+            top: 0;
+            width: 2px;
+            height: 100%;
+        }
+
+        .service-page__item--open &::after {
+            transform: scaleY(0);
+        }
+    }
+
+    &__text {
+        grid-column: 3;
+        grid-row: 1 / -1;
+        align-self: start;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 30px;
+        letter-spacing: -0.03em;
+        color: #555555;
+        max-width: 610px;
+        opacity: 0;
+        transition: opacity .3s;
+        @media #{$xl} {
+            font-size: 16px;
+            line-height: 22px;
+        }
+        p {
+            &:not(:last-child) {
+                margin-bottom: 30px;
+                @media #{$xl} {
+                    margin-bottom: 15px; 
+                }
+            }
+        }
+
+        .service-page__item--open & {
+            opacity: 1;
+            transition: opacity .5s .2s;
+        }
+    }
+
+    &__media {
+        grid-column: 1;
+        grid-row: 2;
+        overflow: hidden;
+
+        img {
+            display: block;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__cta {
+        grid-column: 2;
+        grid-row: 2;
+        align-self: end;
+        .rr-btn {
+            text-transform: none;
+        }
+    }
+
+    &__btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 9px 12px;
+        background: #111;
+        color: #fff;
+        font-size: 11px;
+        text-decoration: none;
+        transition: opacity .2s;
+
+        &:hover {
+            opacity: .8;
+        }
+
+        &:focus-visible {
+            outline: 2px solid #111;
+            outline-offset: 2px;
+        }
+    }
+
+@media (max-width: 991px) {
+    &__item {
+        grid-template-columns: 270px 1fr;
+        grid-template-rows: auto auto auto;
+        column-gap: 30px;
+        padding: 37px 0;
+        @media #{$sm} {
+            grid-template-columns:  1fr;
+        }
+    }
+
+    &__num {
+        grid-column: 1;
+        grid-row: 1;
+        font-size: 36px;
+        margin-bottom: 0;
+    }
+
+    &__head {
+        grid-column: 2;
+        grid-row: 1;
+        padding-right: 40px; // icon er niche title na jay
+    }
+
+    &__title {
+        font-size: 36px;
+        line-height: 1.1;
+        margin-bottom: 20px;
+    }
+
+    &__icon {
+        grid-column: 2;
+        grid-row: 1;
+        align-self: start;
+        justify-self: end;
+        margin-top: 10px;
+    }
+
+    &__text {
+        grid-column: 2;
+        grid-row: 2;
+        margin-top: 25px;
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    &__media {
+        grid-column: 1;
+        grid-row: 2;
+        margin-top: 25px;
+    }
+
+    &__cta {
+        grid-column: 1;
+        grid-row: 3;
+        align-self: start;
+        margin-bottom: 0;
+    }
+    @media #{$sm} {
+        &__item {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            column-gap: 0;
+        }
+
+        &__num {
+            grid-column: 1;
+            grid-row: 1;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        &__head {
+            grid-column: 1;
+            grid-row: 2;
+            padding-right: 40px; // icon er niche title na jay
+        }
+
+        &__title {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        &__icon {
+            grid-column: 1;
+            grid-row: 2;          // head er sathe same row, top right
+            align-self: start;
+            justify-self: end;
+            margin-top: 6px;
+        }
+
+        &__text {
+            grid-column: 1;
+            grid-row: 3;
+            margin-top: 20px;
+            font-size: 16px;
+            line-height: 1.5;
+            max-width: 100%;
+        }
+
+        &__media {
+            grid-column: 1;
+            grid-row: 4;
+            margin-top: 20px;
+        }
+
+        &__cta {
+            grid-column: 1;
+            grid-row: 5;
+            align-self: start;
+            margin-top: 20px;
+        }
+    }
+}
+}

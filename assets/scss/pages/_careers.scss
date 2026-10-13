@@ -1,0 +1,319 @@
+// careers-page css
+
+.careers-page {
+    &__wrapper {
+        padding-top: 140px;
+        @media #{$lg} {
+            padding-top: 60px;
+        }
+    }
+
+    &__info {
+        .title {
+            font-weight: 600;
+            font-size: 100px;
+            line-height: 90px;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+            @media #{$xxl} {
+                & br{
+                    display: none;
+                }
+            }
+            @media #{$xl} {
+                font-size: 86px;
+                line-height: 90px;
+            }
+            @media #{$lg} {
+                font-size: 60px;
+                line-height:1.1;
+            }
+            @media #{$md} {
+                font-size: 50px;
+                line-height:1.1;
+            }
+            @media #{$sm} {
+                font-size: 41px;
+                line-height: 1.1;
+            }
+            @media #{$xs} {
+                font-size: 27px;
+                line-height: 1.1;
+            }
+        }
+    }
+
+    &__wrap {
+        display: grid;
+        grid-template-columns: 1fr 395px 450px;
+        @media #{$xl} {
+            grid-template-columns: 1fr 395px 290px;
+        }
+        @media #{$md} {
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+        @media #{$xs} {
+            grid-template-columns: 1fr ;
+            gap: 25px;
+        }
+    }
+
+    &__thumb {
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__box {
+        background: var(--primary);
+        height: fit-content;
+        padding: 47px 45px 47px 50px;
+        @media #{$xs} {
+            padding: 20px 15px 20px 15px;
+         }
+
+        h3 {
+            font-weight: 500;
+            font-size: 22px;
+            line-height: 22px;
+            letter-spacing: -0.05em;
+            color: #FFFFFF;
+            max-width: 130px;
+            margin-bottom: 240px;
+            @media #{$xs} {
+               margin-bottom: 30px;
+            }
+        }
+
+        .text {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 20px;
+            letter-spacing: -0.03em;
+            color: #FFFFFF;
+            max-width: 300px;
+        }
+    }
+
+    &__content {
+        margin: auto 0 0 0;
+        @media #{$md} {
+            margin:  0 0 0 0;
+        }
+        .decs {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 20px;
+            letter-spacing: -0.03em;
+            color: #111111;
+            font-family: var(--font_bai-jamjuree);
+            max-width: 270px;
+            margin: 0 0 0 auto;
+            @media #{$md} {
+                margin:  0 0 0 0;
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+// careers css
+
+.careers {
+    margin-top: 110px;
+
+    &__wrapper {
+        .accordion {
+            counter-reset: accordion;
+        }
+
+        .accordion-button {
+            padding: 49px 0px 49px 0px;
+            background-color: transparent;
+            outline: 0;
+            box-shadow: none;
+            border-radius: 0;
+            gap: 10px;
+            @media #{$md} {
+                padding: 20px 0px 20px 0px;
+            }
+            &::after {
+                content: "\2b";
+                font-family: var(--font_awesome);
+                background-image: none;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 16px;
+                color: var(--primary);
+                transition: all 0.5s;
+            }
+
+        }
+
+        .accordion-item {
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(17, 17, 17, 0.1);
+            position: relative;
+            transition: all 0.5s;
+            border-radius: 0;
+            &:first-child {
+                border-top: 1px solid rgba(17, 17, 17, 0.1);
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+
+        .accordion-body {
+            border: none;
+            padding: 0;
+            padding-bottom: 62px;
+        }
+    }
+
+    &__item {
+        display: grid;
+        grid-template-columns: 1fr 648px 90px 418px;
+        gap: 150px;
+        width: 100%;
+        @media #{$xxl} {
+            grid-template-columns: 1fr 515px 90px 283px;
+            gap: 50px;
+        }
+        @media #{$lg} {
+            grid-template-columns: 1fr 296px 90px 283px;
+        }
+        @media #{$md} {
+            grid-template-columns: 1fr 1fr ;
+            gap: 20px;
+        }
+        @media #{$xs} {
+            grid-template-columns: 1fr ;
+            gap: 15px;
+        }
+        .number {
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 35px;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+            color: rgba(17, 17, 17, 0.5);
+        }
+
+        .title {
+            font-weight: 500;
+            font-size: 50px;
+            line-height: 35px;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+            @media #{$lg} {
+                font-size: 30px;
+                line-height: 1.1;
+            }
+            @media #{$sm} {
+                font-size: 24px;
+                line-height: 1.1;
+            }
+        }
+
+        .decs {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 30px;
+            letter-spacing: -0.03em;
+            color: #555555;
+        }
+    }
+
+    &__wrap {
+        display: grid;
+        grid-template-columns: 1fr 688px;
+        gap: 393px;
+        margin-top: 24px;
+        @media #{$xxl} {
+            grid-template-columns: 1fr 611px;
+            gap: 50px;
+        }
+        @media #{$lg} {
+            grid-template-columns: 1fr 520px;
+            gap: 30px;
+        }
+        @media #{$md} {
+            grid-template-columns: 1fr 370px;
+            gap: 20px;
+        }
+        @media #{$sm} {
+            grid-template-columns: 1fr ;
+            gap: 20px;
+        }
+    }
+
+    &__box {
+        margin: 0 0 0 auto;
+        @media #{$lg} {
+            margin: 0 0 0 0;
+        }
+    }
+
+    &__list {
+        li {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 38px;
+            letter-spacing: -0.02em;
+            list-style: none;
+            color: #111111;
+            @media #{$md} {
+                font-size: 16px;
+                line-height: 1.2;
+            }
+            @media #{$xs} {
+                font-size: 15px;
+                line-height: 1.6;
+            }
+            i {
+                margin-right: 14px;
+                @media #{$md} {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+
+    &__btn {
+        margin-top: 70px;
+        @media #{$md} {
+            margin-top: 25px;
+        }
+        .rr-btn {
+            text-transform: none;
+        }
+    }
+
+    &__content {
+        .decs {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 30px;
+            letter-spacing: -0.03em;
+            color: #555555;
+            max-width: 610px;
+            @media #{$md} {
+                font-size: 16px;
+                line-height: 1.1;
+            }
+            &:not(:last-child){
+                margin-bottom: 32px;
+                @media #{$lg} {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+}

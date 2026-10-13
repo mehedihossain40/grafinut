@@ -1,0 +1,204 @@
+/* === font-family scss (index 03) === */
+
+.font-sans {
+  font-family: var(--font_sans);
+}
+
+/* === color scss (index 03) === */
+
+.primary {
+  color: var(--primary);
+}
+
+.secondary {
+  color: var(--secondary);
+
+}
+
+.black {
+  color: var(--black);
+}
+
+
+/* === font-weight scss (index 03) === */
+.fw {
+  &-400 {
+    font-weight: 400;
+  }
+
+  &-500 {
+    font-weight: 500;
+  }
+
+  &-600 {
+    font-weight: 600;
+  }
+
+  &-700 {
+    font-weight: 700;
+  }
+}
+
+.mb-24{
+  margin-bottom: 24px;
+}
+
+/* === container scss (index 03) === */
+.rr-container {
+  &-1250 {
+    max-width: 1250px;
+  }
+}
+.rr-container {
+  &-1244 {
+    max-width: 1244px;
+  }
+}
+.rr-container {
+  &-1544 {
+    max-width: 1544px;
+  }
+}
+.rr-container {
+  &-1844 {
+    max-width: 1844px;
+  }
+}
+.rr-container {
+  &-1460 {
+    max-width: 1460px;
+  }
+}
+.rr-container {
+  &-1694 {
+    max-width: 1544px;
+  }
+}
+.rr-container {
+  &-1824 {
+    max-width: 1824px;
+  }
+}
+.rr-container {
+  &-1894 {
+    max-width: 1894px;
+  }
+}
+
+.body-bg{
+  background: var(--white);
+}
+
+/* === section scss (index 03) === */
+header {
+  margin-bottom: -1px;
+  z-index: 100;
+}
+
+section {
+  margin-bottom: -1px;
+}
+
+.mb-minus-25{
+  margin-bottom: -25px;
+}
+
+
+.section-space {
+  padding-top:200px;
+  padding-bottom: 200px;
+
+  @media #{$lg} {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+
+  @media #{$md} {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  @media #{$sm,$xs} {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+.section-space-top {
+  padding-top: 200px;
+
+  @media #{$lg} {
+    padding-top: 120px;
+  }
+
+  @media #{$md} {
+    padding-top: 80px;
+  }
+
+  @media #{$sm,$xs} {
+    padding-top: 60px;
+  }
+}
+
+
+.section-space-bottom {
+  padding-bottom: 200px;
+
+  @media #{$lg} {
+    padding-bottom: 120px;
+  }
+
+  @media #{$md} {
+    padding-bottom: 80px;
+  }
+
+  @media #{$sm,$xs} {
+    padding-bottom: 60px;
+  }
+}
+.section-space-top-150{
+  padding-top: 150px;
+
+  @media #{$lg} {
+    padding-top: 120px;
+  }
+
+  @media #{$md} {
+    padding-top: 80px;
+  }
+
+  @media #{$sm,$xs} {
+    padding-top: 60px;
+  }
+}
+
+.gx-10 {
+  --bs-gutter-x: 10px;
+}
+.gx-40 {
+  --bs-gutter-x: 40px;
+}
+.gx-20 {
+  --bs-gutter-x: 20px;
+}
+
+.g-10,
+.gy-10 {
+	--bs-gutter-y: 10px;
+}
+
+.gy-40 {
+	--bs-gutter-y: 40px;
+}
+.gy-20 {
+	--bs-gutter-y: 20px;
+}
+.mb-minus-50 {
+  margin-bottom: -50px;
+}
+// .mb-24{
+//   margin-bottom: 24px;
+// }
+.mb-minus-24 {
+  margin-bottom: -24px;
+}

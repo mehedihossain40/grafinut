@@ -1,0 +1,542 @@
+// about css
+
+.about {
+    &__wrapper {
+        padding-top: 135px;
+        margin-bottom: 95px;
+        @media #{$lg} {
+            padding-top: 60px;
+            margin-bottom: 60px;
+        }
+        .title {
+            font-weight: 500;
+            font-size: 140px;
+            line-height: 125px;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+            max-width: 1264px;
+            @media #{$xl} {
+                font-size: 116px;
+                line-height: 1.1;
+            }
+            @media #{$lg} {
+                font-size: 95px;
+                line-height: 1.1;
+            }
+            @media #{$md} {
+                font-size: 80px;
+                line-height: 1.1;
+            }
+            @media #{$sm} {
+                font-size: 60px;
+                line-height: 1.1;
+            }
+            @media #{$xs} {
+                font-size: 32px;
+                line-height: 1.1;
+            }
+        }
+
+        .content {
+            margin-right: 197px;
+            margin-top: 105px;
+            @media #{$xl} {
+                margin-top: 30px;
+            }
+            @media #{$md} {
+                margin-right: 0;
+            }
+            .decs {
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 30px;
+                letter-spacing: -0.03em;
+                color: #555555;
+                max-width: 562px;
+                margin: 0 0 0 auto;
+
+                &:not(:last-child) {
+                    margin-bottom: 30px;
+                }
+                @media #{$md} {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+
+    &__thumb-box {
+        display: flex;
+        gap: 20px;
+        @media #{$md} {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @media #{$sm} {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media #{$xs} {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        .thumb{
+            @media #{$md} {
+                height: 400px;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            @media #{$xs} {
+                height: 100%;
+            }
+        }
+    }
+
+    &__inner {
+        display: flex;
+        gap: 30px;
+        justify-content: space-between;
+        margin-top: 210px;
+        @media #{$xl} {
+            margin-top: 60px;
+        }
+        @media #{$sm} {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__content {
+        .decs {
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 30px;
+            letter-spacing: -0.03em;
+            color: #555555;
+            max-width: 610px;
+
+            &:not(:last-child) {
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    &__author {
+        margin-top: 45px;
+
+        .name {
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 22px;
+            letter-spacing: -0.05em;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        .details {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 22px;
+            letter-spacing: -0.05em;
+            color: #999999;
+        }
+    }
+
+    &__wrap {
+        margin-top: 230px;
+        @media #{$lg} {
+            margin-top: 60px;
+        }
+    }
+
+    &__item {
+        display: grid;
+        grid-template-columns: 1fr 610px;
+        gap: 20px;
+        align-items: center;
+
+        &:not(:last-child) {
+            margin-bottom: 85px;
+            @media #{$lg} {
+                margin-bottom: 30px;
+            }
+        }
+        @media #{$xl} {
+            grid-template-columns: 1fr 515px;
+            gap: 20px;
+        }
+        @media #{$lg} {
+            grid-template-columns: 1fr 414px;
+            gap: 20px;
+        }
+        @media #{$md} {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        .title {
+            font-weight: 500;
+            font-size: 80px;
+            line-height: 30px;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+            @media #{$lg} {
+                font-size: 60px;
+                line-height: 1.1;
+            }
+            @media #{$xs} {
+                font-size: 33px;
+                line-height: 1.1;
+            }
+        }
+
+        .decs {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 26px;
+            color: #555555;
+            max-width: 516px;
+            @media #{$md} {
+               max-width: 100%;
+            }
+        }
+    }
+}
+
+// features css
+
+.features {
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 21px;
+        @media #{$lg} {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @media #{$md} {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media #{$xs} {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    &__item {
+        border-top: 1px solid rgba(17, 17, 17, 0.1);
+        padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 150px;
+        position: relative;
+        padding-left: 40px;
+        @media #{$xl} {
+            padding-left: 15px;
+        }
+        @media #{$lg} {
+            gap: 40px;
+        }
+        @media #{$xs} {
+            padding-left: 0;
+        }
+        &:not(:last-child) {
+            &::before {
+                position: absolute;
+                content: '';
+                right: -11px;
+                height: 100%;
+                width: 1px;
+                background: rgba(17, 17, 17, 0.1);
+                bottom: 0;
+                @media #{$xs} {
+                    display: none;
+                }
+            }
+        }
+
+        &:nth-child(2) {
+            flex-direction: column-reverse;
+        }
+
+        &:nth-child(4) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__content {
+        .title {
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 30px;
+            letter-spacing: -0.07em;
+            margin-bottom: 23px;
+        }
+
+        .decs {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 28px;
+            color: #999999;
+            max-width: 360px;
+        }
+    }
+}
+
+// counter css
+
+.counter {
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 1fr 878px;
+        gap: 20px;
+        @media #{$xl} {
+            grid-template-columns: 1fr 570px;
+        }
+        @media #{$md} {
+            grid-template-columns: 1fr ;
+            gap: 30px;
+        }
+    }
+
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+
+        .title {
+            font-weight: 600;
+            font-size: 50px;
+            line-height: 55px;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+            color: #111111;
+            @media #{$lg} {
+                font-size: 44px;
+                line-height: 55px;
+            }
+            @media #{$md} {
+                 br{
+                    display: none;
+                 }
+            }
+            @media #{$xs} {
+                font-size: 34px;
+                line-height: 45px;
+        
+            }
+        }
+
+        .text {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 26px;
+            color: #555555;
+            margin: auto 0 0 0;
+        }
+    }
+
+    &__inner {
+        display: grid;
+        grid-template-columns: 1fr 271px;
+        gap: 170px 30px;
+        @media #{$xl} {
+            gap: 30px;
+        }
+        @media #{$sm} {
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        @media #{$xs} {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+    }
+
+    &__item {
+        padding-left: 30px;
+        position: relative;
+        border-left: 2px solid #D9D9D9;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: -2px;
+            bottom: 0;
+            height: 71px;
+            width: 2px;
+            background: #7F57FF;
+        }
+
+        h2 {
+            font-weight: 500;
+            font-size: 100px;
+            line-height: 45px;
+            letter-spacing: -0.05em;
+            color: #0E0D0D;
+            position: relative;
+            margin-top: -20px;
+            span {
+                font-family: var(--font_tasa-orbiter);
+            }
+            @media #{$sm} {
+                grid-template-columns: 1fr;
+                font-size: 75px;
+                line-height: 45px;
+            }
+            strong {
+                font-weight: 400;
+                font-size: 30px;
+                line-height: 30px;
+                letter-spacing: -0.07em;
+                color: #111111;
+                font-family: var(--font_tasa-orbiter);
+                position: absolute;
+                top: 20px;
+            }
+        }
+
+        .decs {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 26px;
+            letter-spacing: -0.02em;
+            color: #505050;
+        }
+    }
+}
+
+
+.team {
+  
+    &__inner {
+      position: relative;
+      margin: 0 auto;
+      container-type: inline-size; // enables cqw units
+      overflow: hidden;
+    }
+  
+    &__title {
+      position: absolute;
+      top: 1.4cqw;
+      left: 1.2cqw;
+      z-index: 2;
+      width: 66%;
+      font-weight: 600;
+      font-size: 100px;
+      line-height: 90px;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      color: #111111;
+      @media #{$xxl} {
+        font-size: 70px;
+        line-height: 1;
+      }
+      @media #{$xl} {
+        position: static;   
+        width: 100%;
+        margin-bottom: 30px;
+      }
+      @media #{$md} {
+        font-size: 56px;
+      }
+      @media #{$sm} {
+        font-size: 48px;
+      }
+      @media #{$xs} {
+        font-size: 32px;
+        line-height: 1.1;
+      }
+    }
+
+    &__grid {
+      display: flex;
+      align-items: flex-start;
+      gap: 40px;
+      @media #{$xl} {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);    
+        gap: 30px;
+      }
+      @media #{$md} {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);    
+        gap: 30px;
+      }
+      @media #{$sm} {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);    
+        gap: 30px;
+      }
+      @media #{$xs} {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);    
+        gap: 30px;
+      }
+    }
+  
+    &__lane {
+      display: flex;
+      flex-direction: column;
+      width: 25%;
+      @media #{$xl} {
+        flex: 1 1 0;          
+        min-width: 0;
+        width: auto;
+        gap: 30px;             
+      }
+    }
+  
+    &__card {
+      margin-top: calc(var(--mt, 0) * 1cqw);
+      @media #{$xl} {
+        margin-top: 0;      
+      }
+  
+      &--wide {
+        width: 100%;
+        margin-left: 254px;
+        @media #{$xl} {
+            margin-left: 0;  
+          }
+        .team__photo {
+          aspect-ratio: 4 / 5;
+          @media #{$xl} {
+            aspect-ratio: 3 / 4;
+          }
+        }
+      }
+    }
+  
+    &__photo {
+      position: relative;
+      margin: 0;
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+
+    }
+  
+    &__name {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 22px;
+      letter-spacing: -0.05em;
+      color: #111111;
+      margin-top: 15px;
+    }
+  
+    &__role {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: -0.05em;
+      color: #999999;
+      font-family: var(--font_tasa-orbiter);
+    }
+  }
+  
