@@ -516,6 +516,14 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        overflow: hidden;
+        transition: all .3s ease-in-out;
+        cursor: pointer;
+      }
+      &:hover{
+        img{
+            transform: scale(1.1);
+        }
       }
 
 

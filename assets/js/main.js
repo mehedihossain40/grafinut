@@ -324,34 +324,32 @@ if ($(".fade-wrapper").length > 0) {
 
 
   $(function () {
-    const $monthlyBtn = $("#Monthly"),
-      $yearlyBtn = $("#Annually"),
-      $switch = $(".pricing__toggle-input"),
-      $prices = $(".pricing__price"),
-      $duration = $(".pricing__duration-value");
-  
-    function setPlan(plan) {
+    function setPlan($item, plan) {
       const isYearly = plan === "yearly";
   
-      $monthlyBtn.toggleClass("is-active", !isYearly);
-      $yearlyBtn.toggleClass("is-active", isYearly);
-      $switch.prop("checked", isYearly);
-      $duration.text(isYearly ? "Annually" : "Monthly");
+      $item.find('.pricing__switch-label[data-plan="monthly"]').toggleClass("is-active", !isYearly);
+      $item.find('.pricing__switch-label[data-plan="yearly"]').toggleClass("is-active", isYearly);
+      $item.find(".pricing__toggle-input").prop("checked", isYearly);
+      $item.find(".pricing__duration-value").text(isYearly ? "Annually" : "Monthly");
   
-      $prices.each(function () {
-        const $item = $(this);
-        const value = isYearly ? $item.data("annually") : $item.data("monthly");
+      const $priceWrap = $item.find(".pricing__price");
+      const value = isYearly ? $priceWrap.data("annually") : $priceWrap.data("monthly");
   
-        $item.find(".price").stop(true, true).fadeOut(150, function () {
-          $(this).text(value).fadeIn(150);
-        });
+      $priceWrap.find(".price").stop(true, true).fadeOut(150, function () {
+        $(this).text(value).fadeIn(150);
       });
     }
   
-    $monthlyBtn.on("click", () => setPlan("monthly"));
-    $yearlyBtn.on("click", () => setPlan("yearly"));
-    $switch.on("change", function () {
-      setPlan(this.checked ? "yearly" : "monthly");
+    // Button click
+    $(".pricing__switch-label").on("click", function () {
+      const $item = $(this).closest(".pricing__item");
+      setPlan($item, $(this).data("plan"));
+    });
+  
+    // Toggle change
+    $(".pricing__toggle-input").on("change", function () {
+      const $item = $(this).closest(".pricing__item");
+      setPlan($item, this.checked ? "yearly" : "monthly");
     });
   });
 
@@ -550,10 +548,8 @@ $(function () {
     const cs = getComputedStyle(item);
     const singleCol = cs.gridTemplateColumns.trim().split(/\s+/).length === 1;
 
-    // multi column: shudhu head er height
     if (!singleCol) return head.offsetHeight;
 
-    // 1 column: num head er upore thake, tai item er top theke head er bottom porjonto
     const headBottom = head.offsetTop + head.offsetHeight;
     return cs.boxSizing === 'border-box'
       ? headBottom + parseFloat(cs.paddingBottom)
@@ -577,12 +573,10 @@ $(function () {
     }
 
     if (open) {
-      // collapsed px theke full height e animate
       item.style.height = `${item.offsetHeight}px`;
       item.offsetHeight; // reflow
       item.style.height = `${item.scrollHeight}px`;
     } else {
-      // auto theke px e niye tarpor collapse
       item.style.height = `${item.offsetHeight}px`;
       item.offsetHeight; // reflow
       item.style.height = `${collapsed}px`;
@@ -610,7 +604,6 @@ $(function () {
     requestAnimationFrame(() => root.classList.add('is-ready'));
   }
 
-  // title (trigger) ar plus/minus icon duto te click korle toggle hobe
   items.forEach((item) => {
     const trigger = item.querySelector('.service-page__trigger');
     const icon = item.querySelector('.service-page__icon');
@@ -622,7 +615,6 @@ $(function () {
     }
   });
 
-  // resize e shudhu closed item er collapsed height update, open gulo auto thake
   let t;
   window.addEventListener('resize', () => {
     clearTimeout(t);
@@ -647,8 +639,6 @@ function ShowcaseSnapSlider() {
   if ($('.rr-snap-slider-holder').length > 0) {
 
     const mm = gsap.matchMedia();
-
-    // shudhu 992px ba tar upore animation cholbe
     mm.add("(min-width: 1199px)", () => {
       const snapSlides = gsap.utils.toArray(".rr-snap-slide");
 
@@ -660,10 +650,10 @@ function ShowcaseSnapSlider() {
         gsap.fromTo(
           imageWrappers,
           {
-            y: isFirstSlide ? 0 : -window.innerHeight
+            yPercent: isFirstSlide ? 0 : -100
           },
           {
-            y: isLastSlide ? 0 : window.innerHeight,
+            yPercent: isLastSlide ? 0 : 100,
             scrollTrigger: {
               trigger: slide,
               scrub: true,
@@ -723,6 +713,71 @@ AOS.init({
   once: true
 });
 
+
+const thumbs = document.querySelectorAll('.testimonial__thumb');
+
+function stopAllVideos() {
+  thumbs.forEach(thumb => {
+    const video = thumb.querySelector('.testimonial__player');
+    video.pause();
+    thumb.classList.remove('is-playing');
+  });
+}
+
+thumbs.forEach(thumb => {
+  const playBtn = thumb.querySelector('.testimonial__play');
+  const video = thumb.querySelector('.testimonial__player');
+
+  playBtn.addEventListener('click', e => {
+    e.preventDefault();
+    stopAllVideos();
+    thumb.classList.add('is-playing');
+    video.play();
+  });
+
+  // video shesh hole abar image + play icon dekhabe
+  video.addEventListener('ended', () => {
+    thumb.classList.remove('is-playing');
+    video.currentTime = 0;
+  });
+});
+
+
+(function () {
+  const loader = document.querySelector("[data-loader]");
+  const wordEl = document.querySelector("[data-loader-word]");
+  if (!loader || !wordEl) return;
+
+  const words = [
+    "Ola", "Bonjour", "こんにちは", "স্বাগতম", "Merhaba", 
+  ];
+
+  function runLoader() {
+    const tl = gsap.timeline();
+
+    words.forEach((word, i) => {
+      const isLast = i === words.length - 1;
+      tl.add(() => (wordEl.textContent = word))
+        .fromTo(
+          wordEl,
+          { autoAlpha: 0, y: 20 },
+          { autoAlpha: 1, y: 0, duration: 0.15, ease: "power2.out" }
+        )
+        .to({}, { duration: isLast ? 0.6 : 0.12 });
+    });
+
+    tl.to(wordEl, { autoAlpha: 0, y: -20, duration: 0.3, ease: "power2.in" })
+      .to(loader, { yPercent: -100, duration: 0.9, ease: "power4.inOut" })
+      .set(loader, { display: "none" })
+      .add(() => {
+        document.documentElement.classList.remove("is-loading");
+        if (window.ScrollTrigger) ScrollTrigger.refresh();
+        window.dispatchEvent(new Event("loader:done")); // hero animation ekhan theke start korte paro
+      });
+  }
+
+  window.addEventListener("load", runLoader);
+})();
 
 })(jQuery);
 

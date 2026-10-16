@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="business">
+<html lang="en" data-theme="business" class="is-loading">
 
 <head>
   <meta charset="UTF-8">
@@ -29,24 +29,15 @@
 
 <body>
 
-  <div class="loader-wrap">
-    <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
-      <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
-    </svg>
-
-    <div class="loader-wrap-heading">
-      <div class="load-text">
-        <span>g</span>
-        <span>r</span>
-        <span>a</span>
-        <span>f</span>
-        <span>i</span>
-        <span>n</span>
-        <span>u</span>
-        <span>t</span>
-      </div>
-    </div>
+  <div class="loader" data-loader>
+    <span class="loader__line" data-loader-line></span>
+    <span class="loader__word" data-loader-word>Ola</span>
+    <span class="loader__mouse" data-loader-mouse>
+      <span class="loader__mouse-wheel"></span>
+    </span>
   </div>
+
+  <!-- Sroll to top -->
 
   <!-- Sroll to top -->
   <div class="progress-wrap">
@@ -129,30 +120,21 @@
                 <div class="header__nav">
                   <nav class="main-menu">
                     <ul>
-                      <li><a href="index.html">Home</a></li>
-                      <li><a href="about-us.html">About Us</a></li>
+                      <li><a href="index.html">home</a></li>
+                      <li><a href="work.html">Work</a></li>
+                      <li><a href="about-us.html">About</a></li>
                       <li class="menu-item-has-children ">
                         <a href="#">Pages</a>
                         <ul class="dp-menu">
                           <li><a href="service.html">Services</a></li>
-                          <li><a href="careers.html">Careers</a></li>
+                          <li><a href="work-details.html">Work Details</a></li>
+                          <li><a href="blog.html">Blog</a></li>
+                          <li><a href="blog-details.html">Blog Details</a></li>
                           <li><a href="privacy.html">Privacy</a></li>
                         </ul>
                       </li>
-                      <li class="menu-item-has-children ">
-                        <a href="#">work </a>
-                        <ul class="dp-menu">
-                          <li><a href="work.html">Work</a></li>
-                          <li><a href="work-details.html">Work Details</a></li>
-                        </ul>
-                      </li>
-                      <li class="menu-item-has-children ">
-                        <a href="#">Blog</a>
-                        <ul class="dp-menu">
-                          <li><a href="blog.html">Blog</a></li>
-                          <li><a href="blog-details.html">Blog Details</a></li>
-                        </ul>
-                      </li>
+                      <li><a href="work.html">Work</a></li>
+                      <li><a href="careers.html">Careers</a></li>
                       <li><a href="contact.html">Contact</a></li>
                     </ul>
                   </nav>
@@ -672,10 +654,10 @@
                                 <li>Content &amp; Messaging</li>
                                 <li>Motion &amp; Interaction</li>
                               </ul>
-                              <h2 class="title">Brand <br> Identity</h2>
+                              <h2 class="title"><a href="service.html">Brand <br> Identity</a></h2>
                             </div>
                             <div class="section-image">
-                              <img src="assets/imgs/home/service-1.jpg" alt="">
+                              <img src="assets/imgs/home/service-1.jpg" alt="img">
                             </div>
                             <div class="text-wrapper">
                               <h2 class="title">01</h2>
@@ -711,10 +693,10 @@
                                 <li>Content &amp; Messaging</li>
                                 <li>Motion &amp; Interaction</li>
                               </ul>
-                              <h2 class="title">Product <br> Design</h2>
+                              <h2 class="title"><a href="service.html">Product <br> Design</a></h2>
                             </div>
                             <div class="section-image">
-                              <img src="assets/imgs/home/service-1.jpg" alt="">
+                              <img src="assets/imgs/home/service-1.jpg" alt="img">
                             </div>
                             <div class="text-wrapper">
                               <h2 class="title">02</h2>
@@ -750,10 +732,10 @@
                                 <li>Content &amp; Messaging</li>
                                 <li>Motion &amp; Interaction</li>
                               </ul>
-                              <h2 class="title">Develop<br>ment</h2>
+                              <h2 class="title"><a href="service.html">Develop<br>ment</a></h2>
                             </div>
                             <div class="section-image">
-                              <img src="assets/imgs/home/service-1.jpg" alt="">
+                              <img src="assets/imgs/home/service-1.jpg" alt="img">
                             </div>
                             <div class="text-wrapper">
                               <h2 class="title">03</h2>
@@ -789,10 +771,10 @@
                                 <li class="is-active">Content &amp; Messaging</li>
                                 <li>Motion &amp; Interaction</li>
                               </ul>
-                              <h2 class="title">Content &amp; <br> Messaging</h2>
+                              <h2 class="title"><a href="service.html">Content &amp; <br> Messaging</a></h2>
                             </div>
                             <div class="section-image">
-                              <img src="assets/imgs/home/service-1.jpg" alt="">
+                              <img src="assets/imgs/home/service-1.jpg" alt="img">
                             </div>
                             <div class="text-wrapper">
                               <h2 class="title">04</h2>
@@ -828,10 +810,10 @@
                                 <li>Content &amp; Messaging</li>
                                 <li class="is-active">Motion &amp; Interaction</li>
                               </ul>
-                              <h2 class="title">Motion &amp; <br> Interaction</h2>
+                              <h2 class="title"><a href="service.html">Motion &amp; <br> Interaction</a></h2>
                             </div>
                             <div class="section-image">
-                              <img src="assets/imgs/home/service-1.jpg" alt="">
+                              <img src="assets/imgs/home/service-1.jpg" alt="img">
                             </div>
                             <div class="text-wrapper">
                               <h2 class="title">05</h2>
@@ -1140,11 +1122,16 @@
                   <div class="swiper-slide">
                     <div class="testimonial__thumb">
                       <img src="assets/imgs/home/testimonial-img-1.png" alt="img not found">
+                  
                       <div class="testimonial__video">
-                        <a href="assets/imgs/home/hero-video.mp4" class="video-popup">
+                        <a href="assets/imgs/home/hero-video.mp4" class="testimonial__play" aria-label="Play video">
                           <i class="fa-solid fa-play"></i>
                         </a>
                       </div>
+                  
+                      <video class="testimonial__player" playsinline controls preload="none">
+                        <source src="assets/imgs/home/hero-video.mp4" type="video/mp4">
+                      </video>
                     </div>
                   </div>
                   <div class="swiper-slide">
@@ -1169,11 +1156,16 @@
                   <div class="swiper-slide">
                     <div class="testimonial__thumb">
                       <img src="assets/imgs/home/testimonial-img-2.png" alt="img not found">
+                  
                       <div class="testimonial__video">
-                        <a href="assets/imgs/home/hero-video.mp4" class="video-popup">
+                        <a href="assets/imgs/home/hero-video.mp4" class="testimonial__play" aria-label="Play video">
                           <i class="fa-solid fa-play"></i>
                         </a>
                       </div>
+                  
+                      <video class="testimonial__player" playsinline controls preload="none">
+                        <source src="assets/imgs/home/hero-video.mp4" type="video/mp4">
+                      </video>
                     </div>
                   </div>
                 </div>
@@ -1538,7 +1530,7 @@
                     <h3 class="title">স্বাগতম</h3>
                     <span class="office__time" data-timezone="Asia/Kuala_Lumpur">01:52:57</span>
                   </div>
-                  <p class="office__city">Kuala Lumpur</p>
+                  <p class="office__city">Dhaka</p>
                   <h2 class="office__address">
                     <a href="#">Floor 3rd, Apartment 154, <br> Road C1, 1430 Dhaka, Bangladesh</a>
                   </h2>

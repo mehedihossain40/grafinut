@@ -184,6 +184,10 @@
         width: 100%;
         @media #{$xxl} {
             grid-template-columns: 1fr 515px 90px 283px;
+            gap: 120px;
+        }
+        @media #{$xl} {
+            grid-template-columns: 1fr 515px 90px 283px;
             gap: 50px;
         }
         @media #{$lg} {
@@ -237,6 +241,9 @@
         gap: 393px;
         margin-top: 24px;
         @media #{$xxl} {
+            gap: 82px;
+        }
+        @media #{$xl} {
             grid-template-columns: 1fr 611px;
             gap: 50px;
         }

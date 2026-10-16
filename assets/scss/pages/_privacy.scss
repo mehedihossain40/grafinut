@@ -22,24 +22,49 @@
         }
     }
 
-    &__list {
-        li {
-            font-weight: 500;
-            font-size: 20px;
-            line-height: 24px;
-            letter-spacing: -0.02em;
-            color: rgba(17, 17, 17, 0.45);
-            list-style: none;
-            transition: all .3s ease-in-out;
-            cursor: pointer;
-            &:not(:last-child){
-                margin-bottom: 13px;
-            }
-            &:hover{
-                color: var(--primary);
-            }
+    
+    .nav-pills {
+        display: block;
+    }
+
+    .nav-link {
+        list-style: none;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: -0.02em;
+        color: rgba(17, 17, 17, 0.45);
+        list-style: none;
+        transition: all .3s ease-in-out;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.2s ease;
+        width: 100%;
+        padding: 0;
+        margin-bottom: 13px;
+
+        &.active,
+        &:hover {
+            background: transparent;
+            color: var(--primary);
+
         }
     }
+
+    .tab-content {
+        .tab-pane {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .tab-pane.show.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
 
     &__inner {
         padding-left: 200px;

@@ -29,23 +29,12 @@
 
 <body>
 
-    <div class="loader-wrap">
-        <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
-            <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
-        </svg>
-
-        <div class="loader-wrap-heading">
-            <div class="load-text">
-                <span>g</span>
-                <span>r</span>
-                <span>a</span>
-                <span>f</span>
-                <span>i</span>
-                <span>n</span>
-                <span>u</span>
-                <span>t</span>
-            </div>
-        </div>
+    <div class="loader" data-loader>
+        <span class="loader__line" data-loader-line></span>
+        <span class="loader__word" data-loader-word>Ola</span>
+        <span class="loader__mouse" data-loader-mouse>
+            <span class="loader__mouse-wheel"></span>
+        </span>
     </div>
 
     <!-- Sroll to top -->
@@ -130,30 +119,21 @@
                                 <div class="header__nav">
                                     <nav class="main-menu">
                                         <ul>
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="about-us.html">About Us</a></li>
+                                            <li><a href="index.html">home</a></li>
+                                            <li><a href="work.html">Work</a></li>
+                                            <li><a href="about-us.html">About</a></li>
                                             <li class="menu-item-has-children ">
                                                 <a href="#">Pages</a>
                                                 <ul class="dp-menu">
                                                     <li><a href="service.html">Services</a></li>
-                                                    <li><a href="careers.html">Careers</a></li>
+                                                    <li><a href="work-details.html">Work Details</a></li>
+                                                    <li><a href="blog.html">Blog</a></li>
+                                                    <li><a href="blog-details.html">Blog Details</a></li>
                                                     <li><a href="privacy.html">Privacy</a></li>
                                                 </ul>
                                             </li>
-                                            <li class="menu-item-has-children ">
-                                                <a href="#">work </a>
-                                                <ul class="dp-menu">
-                                                    <li><a href="work.html">Work</a></li>
-                                                    <li><a href="work-details.html">Work Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="menu-item-has-children ">
-                                                <a href="#">Blog</a>
-                                                <ul class="dp-menu">
-                                                    <li><a href="blog.html">Blog</a></li>
-                                                    <li><a href="blog-details.html">Blog Details</a></li>
-                                                </ul>
-                                            </li>
+                                            <li><a href="work.html">Work</a></li>
+                                            <li><a href="careers.html">Careers</a></li>
                                             <li><a href="contact.html">Contact</a></li>
                                         </ul>
                                     </nav>
@@ -206,10 +186,11 @@
                         <div class="container rr-container-1844">
                             <div class="breadcrumb-6__content">
                                 <h3 class="title">Privacy Policy</h3>
-                                <p class="decs">We value your privacy and are committed to protocring your <br> personal information.</p>
+                                <p class="decs">We value your privacy and are committed to protocring your <br> personal
+                                    information.</p>
                                 <p class="last-update">
                                     Last Update: <span class="date">July 28, 2026</span>
-                                  </p>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -220,35 +201,250 @@
                     <div class="container rr-container-1844">
                         <div class="privacy__wrapper">
                             <div class="privacy__wrap">
-                                <ul class="privacy__list">
-                                    <li>1. Introduction</li>
-                                    <li>2. Information We Collect</li>
-                                    <li>3. How We Use Your Information</li>
-                                    <li>4. Information Sharing</li>
-                                    <li>5. Your Privacy Rights</li>
+                                <ul class="nav nav-pills  flex-wrap" id="coursesTabs" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="all-tab" data-bs-toggle="pill"
+                                            data-bs-target="#advanced-all" type="button" role="tab">1.
+                                            Introduction</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="company-tab" data-bs-toggle="pill"
+                                            data-bs-target="#advanced-company" type="button" role="tab">2. Information
+                                            We Collect</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="social-tab" data-bs-toggle="pill"
+                                            data-bs-target="#advanced-social" type="button" role="tab">3. How We Use
+                                            Your Information</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="sharing-tab" data-bs-toggle="pill"
+                                            data-bs-target="#advanced-sharing" type="button" role="tab">4. Information
+                                            Sharing</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="rights-tab" data-bs-toggle="pill"
+                                            data-bs-target="#advanced-rights" type="button" role="tab">5. Your Privacy
+                                            Rights</button>
+                                    </li>
                                 </ul>
                             </div>
-                            <div class="privacy__inner">
-                                <div class="privacy__item">
-                                    <h2 class="title">1. Introduction</h2>
-                                    <p class="decs">At Grafinut, we respect your privacy and an committed to protacting the information you share with us. Thess Privacy Policy explains how we collect, use, decluse, and safeguard your personal information when you visit our website or use our services</p>
+                            <div class="tab-content tab-content-area" id="coursesTabsContent">
+                                <div class="tab-pane fade show active" id="advanced-all" role="tabpanel">
+                                    <div class="privacy__inner">
+                                        <div class="privacy__item">
+                                            <h2 class="title">1. Introduction</h2>
+                                            <p class="decs">At Grafinut, we respect your privacy and an committed to
+                                                protacting the information you share with us. Thess Privacy Policy
+                                                explains how we collect, use, decluse, and safeguard your personal
+                                                information when you visit our website or use our services</p>
+                                        </div>
+                                        <div class="privacy__item">
+                                            <h2 class="title">2. Information We Collect</h2>
+                                            <p class="decs">We may-coliect information you provide directly to us,
+                                                including your name, email address, phone nambie, company details,
+                                                project information, and any other detalls you choose to share when
+                                                contacting Grafinut or requesting our services</p>
+                                        </div>
+                                        <div class="privacy__item">
+                                            <h2 class="title">3. How We Use Your Information</h2>
+                                            <p class="decs">We use the information we collect to respond to your
+                                                inquiries, provide and improve our design services, communicate with you
+                                                about projects and updates, enhance our wabato experience, and ensure
+                                                the security and performance of our witbate</p>
+                                        </div>
+                                        <div class="privacy__item">
+                                            <h2 class="title">4. Information Sharing</h2>
+                                            <p class="decs">Grafrut does not self or rent your personal information. We
+                                                may share limited information with trusted service providers when
+                                                necessary to operate our websilk deliver services, or support our
+                                                brainess operations. These parties are obligated to protect your
+                                                information and use it only for the purposes we specify</p>
+                                        </div>
+                                        <div class="privacy__item">
+                                            <h2 class="title">5. Your Privacy Rights</h2>
+                                            <p class="decs">Depending on applicable laws, you may have the right to
+                                                access, updina comici, or west deeroon of your personal information. You
+                                                may also onntact us if you have questions about how your information is
+                                                handled</p>
+                                            <p class="text">If you have any questions, concerns, or requests regarding
+                                                this. Privacy Policy of how we handle your information please contact
+                                                Grafinut through our official contact channeis</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="privacy__item">
-                                    <h2 class="title">2. Information We Collect</h2>
-                                    <p class="decs">We may-coliect information you provide directly to us, including your name, email address, phone nambie, company details, project information, and any other detalls you choose to share when contacting Grafinut or requesting our services</p>
+                                <div class="tab-pane fade" id="advanced-company" role="tabpanel">
+                                    <div class="privacy__inner">
+                                        <div class="privacy__item">
+                                            <h2 class="title">1. Introduction</h2>
+                                            <p class="decs">At Grafinut, we respect your privacy and an committed to
+                                                protacting the information you share with us. Thess Privacy Policy
+                                                explains how we collect, use, decluse, and safeguard your personal
+                                                information when you visit our website or use our services</p>
+                                        </div>
+                                        <div class="privacy__item">
+                                            <h2 class="title">2. Information We Collect</h2>
+                                            <p class="decs">We may-coliect information you provide directly to us,
+                                                including your name, email address, phone nambie, company details,
+                                                project information, and any other detalls you choose to share when
+                                                contacting Grafinut or requesting our services</p>
+                                        </div>
+                                        <div class="privacy__item">
+                                            <h2 class="title">3. How We Use Your Information</h2>
+                                            <p class="decs">We use the information we collect to respond to your
+                                                inquiries, provide and improve our design services, communicate with you
+                                                about projects and updates, enhance our wabato experience, and ensure
+                                                the security and performance of our witbate</p>
+                                        </div>
+                                        <div class="privacy__item">
+                                            <h2 class="title">4. Information Sharing</h2>
+                                            <p class="decs">Grafrut does not self or rent your personal information. We
+                                                may share limited information with trusted service providers when
+                                                necessary to operate our websilk deliver services, or support our
+                                                brainess operations. These parties are obligated to protect your
+                                                information and use it only for the purposes we specify</p>
+                                        </div>
+                                        <div class="privacy__item">
+                                            <h2 class="title">5. Your Privacy Rights</h2>
+                                            <p class="decs">Depending on applicable laws, you may have the right to
+                                                access, updina comici, or west deeroon of your personal information. You
+                                                may also onntact us if you have questions about how your information is
+                                                handled</p>
+                                            <p class="text">If you have any questions, concerns, or requests regarding
+                                                this. Privacy Policy of how we handle your information please contact
+                                                Grafinut through our official contact channeis</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="privacy__item">
-                                    <h2 class="title">3. How We Use Your Information</h2>
-                                    <p class="decs">We use the information we collect to respond to your inquiries, provide and improve our design services, communicate with you about projects and updates, enhance our wabato experience, and ensure the security and performance of our witbate</p>
+                                <div class="tab-pane fade" id="advanced-social" role="tabpanel">
+                                    <div class="privacy__inner">
+                                        <div class="privacy__item">
+                                            <h2 class="title">1. Introduction</h2>
+                                            <p class="decs">At Grafinut, we respect your privacy and an committed to
+                                                protacting the information you share with us. Thess Privacy Policy
+                                                explains how we collect, use, decluse, and safeguard your personal
+                                                information when you visit our website or use our services</p>
+                                        </div>
+                                        <div class="privacy__item">
+                                            <h2 class="title">2. Information We Collect</h2>
+                                            <p class="decs">We may-coliect information you provide directly to us,
+                                                including your name, email address, phone nambie, company details,
+                                                project information, and any other detalls you choose to share when
+                                                contacting Grafinut or requesting our services</p>
+                                        </div>
+                                        <div class="privacy__item">
+                                            <h2 class="title">3. How We Use Your Information</h2>
+                                            <p class="decs">We use the information we collect to respond to your
+                                                inquiries, provide and improve our design services, communicate with you
+                                                about projects and updates, enhance our wabato experience, and ensure
+                                                the security and performance of our witbate</p>
+                                        </div>
+                                        <div class="privacy__item">
+                                            <h2 class="title">4. Information Sharing</h2>
+                                            <p class="decs">Grafrut does not self or rent your personal information. We
+                                                may share limited information with trusted service providers when
+                                                necessary to operate our websilk deliver services, or support our
+                                                brainess operations. These parties are obligated to protect your
+                                                information and use it only for the purposes we specify</p>
+                                        </div>
+                                        <div class="privacy__item">
+                                            <h2 class="title">5. Your Privacy Rights</h2>
+                                            <p class="decs">Depending on applicable laws, you may have the right to
+                                                access, updina comici, or west deeroon of your personal information. You
+                                                may also onntact us if you have questions about how your information is
+                                                handled</p>
+                                            <p class="text">If you have any questions, concerns, or requests regarding
+                                                this. Privacy Policy of how we handle your information please contact
+                                                Grafinut through our official contact channeis</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="privacy__item">
-                                    <h2 class="title">4. Information Sharing</h2>
-                                    <p class="decs">Grafrut does not self or rent your personal information. We may share limited information with trusted service providers when necessary to operate our websilk deliver services, or support our brainess operations. These parties are obligated to protect your information and use it only for the purposes we specify</p>
+                                <div class="tab-pane fade" id="advanced-sharing" role="tabpanel">
+                                    <div class="privacy__inner">
+                                        <div class="privacy__item">
+                                            <h2 class="title">1. Introduction</h2>
+                                            <p class="decs">At Grafinut, we respect your privacy and an committed to
+                                                protacting the information you share with us. Thess Privacy Policy
+                                                explains how we collect, use, decluse, and safeguard your personal
+                                                information when you visit our website or use our services</p>
+                                        </div>
+                                        <div class="privacy__item">
+                                            <h2 class="title">2. Information We Collect</h2>
+                                            <p class="decs">We may-coliect information you provide directly to us,
+                                                including your name, email address, phone nambie, company details,
+                                                project information, and any other detalls you choose to share when
+                                                contacting Grafinut or requesting our services</p>
+                                        </div>
+                                        <div class="privacy__item">
+                                            <h2 class="title">3. How We Use Your Information</h2>
+                                            <p class="decs">We use the information we collect to respond to your
+                                                inquiries, provide and improve our design services, communicate with you
+                                                about projects and updates, enhance our wabato experience, and ensure
+                                                the security and performance of our witbate</p>
+                                        </div>
+                                        <div class="privacy__item">
+                                            <h2 class="title">4. Information Sharing</h2>
+                                            <p class="decs">Grafrut does not self or rent your personal information. We
+                                                may share limited information with trusted service providers when
+                                                necessary to operate our websilk deliver services, or support our
+                                                brainess operations. These parties are obligated to protect your
+                                                information and use it only for the purposes we specify</p>
+                                        </div>
+                                        <div class="privacy__item">
+                                            <h2 class="title">5. Your Privacy Rights</h2>
+                                            <p class="decs">Depending on applicable laws, you may have the right to
+                                                access, updina comici, or west deeroon of your personal information. You
+                                                may also onntact us if you have questions about how your information is
+                                                handled</p>
+                                            <p class="text">If you have any questions, concerns, or requests regarding
+                                                this. Privacy Policy of how we handle your information please contact
+                                                Grafinut through our official contact channeis</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="privacy__item">
-                                    <h2 class="title">5. Your Privacy Rights</h2>
-                                    <p class="decs">Depending on applicable laws, you may have the right to access, updina comici, or west deeroon of your personal information. You may also onntact us if you have questions about how your information is handled</p>
-                                    <p class="text">If you have any questions, concerns, or requests regarding this. Privacy Policy of how we handle your information please contact Grafinut through our official contact channeis</p>
+
+                                <div class="tab-pane fade" id="advanced-rights" role="tabpanel">
+                                    <div class="privacy__inner">
+                                        <div class="privacy__item">
+                                            <h2 class="title">1. Introduction</h2>
+                                            <p class="decs">At Grafinut, we respect your privacy and an committed to
+                                                protacting the information you share with us. Thess Privacy Policy
+                                                explains how we collect, use, decluse, and safeguard your personal
+                                                information when you visit our website or use our services</p>
+                                        </div>
+                                        <div class="privacy__item">
+                                            <h2 class="title">2. Information We Collect</h2>
+                                            <p class="decs">We may-coliect information you provide directly to us,
+                                                including your name, email address, phone nambie, company details,
+                                                project information, and any other detalls you choose to share when
+                                                contacting Grafinut or requesting our services</p>
+                                        </div>
+                                        <div class="privacy__item">
+                                            <h2 class="title">3. How We Use Your Information</h2>
+                                            <p class="decs">We use the information we collect to respond to your
+                                                inquiries, provide and improve our design services, communicate with you
+                                                about projects and updates, enhance our wabato experience, and ensure
+                                                the security and performance of our witbate</p>
+                                        </div>
+                                        <div class="privacy__item">
+                                            <h2 class="title">4. Information Sharing</h2>
+                                            <p class="decs">Grafrut does not self or rent your personal information. We
+                                                may share limited information with trusted service providers when
+                                                necessary to operate our websilk deliver services, or support our
+                                                brainess operations. These parties are obligated to protect your
+                                                information and use it only for the purposes we specify</p>
+                                        </div>
+                                        <div class="privacy__item">
+                                            <h2 class="title">5. Your Privacy Rights</h2>
+                                            <p class="decs">Depending on applicable laws, you may have the right to
+                                                access, updina comici, or west deeroon of your personal information. You
+                                                may also onntact us if you have questions about how your information is
+                                                handled</p>
+                                            <p class="text">If you have any questions, concerns, or requests regarding
+                                                this. Privacy Policy of how we handle your information please contact
+                                                Grafinut through our official contact channeis</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -259,108 +455,109 @@
             <!-- footer start -->
             <footer class="footer">
                 <div class="footer__wrapper">
-                  <div class="shape"><img src="assets/imgs/home/footer-bg.png" alt="img"></div>
-                  <div class="container rr-container-1844">
-                    <a href="contact.html" class="talk-link">
-                      Let's Talk
-                      <img src="assets/imgs/icon/arrow-icon.png" alt="icon">
-                    </a>
-                    <div class="footer__widgets">
-                      <div class="footer__widget">
-                        <div class="footer__logo">
-                          <a href="#"><img src="assets/imgs/logo/logo-white.svg" alt="logo"></a>
+                    <div class="shape"><img src="assets/imgs/home/footer-bg.png" alt="img"></div>
+                    <div class="container rr-container-1844">
+                        <a href="contact.html" class="talk-link">
+                            Let's Talk
+                            <img src="assets/imgs/icon/arrow-icon.png" alt="icon">
+                        </a>
+                        <div class="footer__widgets">
+                            <div class="footer__widget">
+                                <div class="footer__logo">
+                                    <a href="#"><img src="assets/imgs/logo/logo-white.svg" alt="logo"></a>
+                                </div>
+                                <p class="desc">Industry accreditation is <br>
+                                    mark of credibility professionalism
+                                </p>
+                                <a class="email" href="mail:hello@grafinut.com">hello@grafinut.com</a>
+                            </div>
+                            <div class="footer__widget">
+                                <h2 class="title">Products</h2>
+                                <ul class="footer-links">
+                                    <li><a href="contact.html">Modet Ai </a></li>
+                                    <li><a href="contact.html">Reski</a></li>
+                                    <li><a href="contact.html">Grofund</a></li>
+                                    <li><a href="contact.html">Zoon Shaper</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="footer__widget">
+                                <h2 class="title">Discover</h2>
+                                <ul class="footer-links">
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="contact.html">Journal</a></li>
+                                    <li><a href="work.html">Work</a></li>
+                                    <li><a href="careers.html">Careers</a>
+                                    <li><a href="contact.html">Contact Us</a>
+                                    <li><a href="contact.html">Legal Hub</a>
+                                    <li><a href="service.html">Service</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <p class="desc">Industry accreditation is <br>
-                          mark of credibility professionalism
-                        </p>
-                        <a class="email" href="mail:hello@grafinut.com">hello@grafinut.com</a>
-                      </div>
-                      <div class="footer__widget">
-                        <h2 class="title">Products</h2>
-                        <ul class="footer-links">
-                          <li><a href="contact.html">Modet Ai </a></li>
-                          <li><a href="contact.html">Reski</a></li>
-                          <li><a href="contact.html">Grofund</a></li>
-                          <li><a href="contact.html">Zoon Shaper</a>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="footer__widget">
-                        <h2 class="title">Discover</h2>
-                        <ul class="footer-links">
-                          <li><a href="about.html">About Us</a></li>
-                          <li><a href="contact.html">Journal</a></li>
-                          <li><a href="work.html">Work</a></li>
-                          <li><a href="careers.html">Careers</a>
-                          <li><a href="contact.html">Contact Us</a>
-                          <li><a href="contact.html">Legal Hub</a>
-                          <li><a href="service.html">Service</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="footer__socail">
-                      <ul>
-                        <li><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a href="https://www.twitter.com/"><i class="fa-brands fa-x-twitter"></i></a></li>
-                        <li><a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                        <li><a href="https://www.behance.com/"><i class="fa-brands fa-behance"></i></a></li>
-                        <li><a href="https://www.dribbble.com/"><i class="fa-brands fa-dribbble"></i></a></li>
-                        <li><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a></li>
-                      </ul>
-                    </div>
-                    <div class="footer__office">
-                      <div class="office__wrapper">
-                        <h2 class="office__title">Office Location</h2>
-                        <div class="office__item">
-                          <div class="office__head">
-                            <h3 class="title">Selamat Datang</h3>
-                            <span class="office__time" data-timezone="Asia/Kuala_Lumpur">01:52:57</span>
-                          </div>
-                          <p class="office__city">Kuala Lumpur</p>
-                          <h2 class="office__address">
-                            <a href="#">Neu Suite, Jalan Nipah, Kampung <br>
-                              Berembang, 55000, Kuala Lumpur, Malaysia</a>
-                          </h2>
-                          <a href="tel:+601916449447" class="office__phone">
-                            <i class="fa-solid fa-phone-volume"></i>+60 19-644 9447
-                          </a>
+                        <div class="footer__socail">
+                            <ul>
+                                <li><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="https://www.twitter.com/"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                <li><a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin-in"></i></a>
+                                </li>
+                                <li><a href="https://www.behance.com/"><i class="fa-brands fa-behance"></i></a></li>
+                                <li><a href="https://www.dribbble.com/"><i class="fa-brands fa-dribbble"></i></a></li>
+                                <li><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            </ul>
                         </div>
-                        <div class="office__item">
-                          <div class="office__head">
-                            <h3 class="title">স্বাগতম</h3>
-                            <span class="office__time" data-timezone="Asia/Kuala_Lumpur">01:52:57</span>
-                          </div>
-                          <p class="office__city">Kuala Lumpur</p>
-                          <h2 class="office__address">
-                            <a href="#">Floor 3rd, Apartment 154, <br> Road C1, 1430 Dhaka, Bangladesh</a>
-                          </h2>
-                          <a href="tel:+601916449447" class="office__phone">
-                            <i class="fa-solid fa-phone-volume"></i>+880 1750-520142
-                          </a>
+                        <div class="footer__office">
+                            <div class="office__wrapper">
+                                <h2 class="office__title">Office Location</h2>
+                                <div class="office__item">
+                                    <div class="office__head">
+                                        <h3 class="title">Selamat Datang</h3>
+                                        <span class="office__time" data-timezone="Asia/Kuala_Lumpur">01:52:57</span>
+                                    </div>
+                                    <p class="office__city">Kuala Lumpur</p>
+                                    <h2 class="office__address">
+                                        <a href="#">Neu Suite, Jalan Nipah, Kampung <br>
+                                            Berembang, 55000, Kuala Lumpur, Malaysia</a>
+                                    </h2>
+                                    <a href="tel:+601916449447" class="office__phone">
+                                        <i class="fa-solid fa-phone-volume"></i>+60 19-644 9447
+                                    </a>
+                                </div>
+                                <div class="office__item">
+                                    <div class="office__head">
+                                        <h3 class="title">স্বাগতম</h3>
+                                        <span class="office__time" data-timezone="Asia/Kuala_Lumpur">01:52:57</span>
+                                    </div>
+                                    <p class="office__city">Dhaka</p>
+                                    <h2 class="office__address">
+                                        <a href="#">Floor 3rd, Apartment 154, <br> Road C1, 1430 Dhaka, Bangladesh</a>
+                                    </h2>
+                                    <a href="tel:+601916449447" class="office__phone">
+                                        <i class="fa-solid fa-phone-volume"></i>+880 1750-520142
+                                    </a>
+                                </div>
+                                <div class="office__item">
+                                    <div class="office__head">
+                                        <h3 class="title">สวัสดีครับี</h3>
+                                        <span class="office__time" data-timezone="Asia/Kuala_Lumpur">01:52:57</span>
+                                    </div>
+                                    <p class="office__city">Trang</p>
+                                    <h2 class="office__address">
+                                        <a href="#">71, V7, Nai Khuan, <br> Yan Ta Khao-92140, Trang, Thailand</a>
+                                    </h2>
+                                    <a href="tel:+601916449447" class="office__phone">
+                                        <i class="fa-solid fa-phone-volume"></i>+66 94 545 8855
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="office__item">
-                          <div class="office__head">
-                            <h3 class="title">สวัสดีครับี</h3>
-                            <span class="office__time" data-timezone="Asia/Kuala_Lumpur">01:52:57</span>
-                          </div>
-                          <p class="office__city">Trang</p>
-                          <h2 class="office__address">
-                            <a href="#">71, V7, Nai Khuan, <br> Yan Ta Khao-92140, Trang, Thailand</a>
-                          </h2>
-                          <a href="tel:+601916449447" class="office__phone">
-                            <i class="fa-solid fa-phone-volume"></i>+66 94 545 8855
-                          </a>
+                        <div class="footer__bottom">
+                            <h2 class="footer__url">https://Grafinut.Com</h2>
+                            <p class="footer__copy-right">© 2025 Grafinut. All rights reserved.</p>
                         </div>
-                      </div>
                     </div>
-                    <div class="footer__bottom">
-                      <h2 class="footer__url">https://Grafinut.Com</h2>
-                      <p class="footer__copy-right">© 2025 Grafinut. All rights reserved.</p>
-                    </div>
-                  </div>
                 </div>
-              </footer>
+            </footer>
             <!-- footer end -->
         </div>
 

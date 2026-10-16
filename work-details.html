@@ -29,23 +29,12 @@
 
 <body>
 
-    <div class="loader-wrap">
-        <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
-            <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
-        </svg>
-
-        <div class="loader-wrap-heading">
-            <div class="load-text">
-                <span>g</span>
-                <span>r</span>
-                <span>a</span>
-                <span>f</span>
-                <span>i</span>
-                <span>n</span>
-                <span>u</span>
-                <span>t</span>
-            </div>
-        </div>
+    <div class="loader" data-loader>
+        <span class="loader__line" data-loader-line></span>
+        <span class="loader__word" data-loader-word>Ola</span>
+        <span class="loader__mouse" data-loader-mouse>
+            <span class="loader__mouse-wheel"></span>
+        </span>
     </div>
 
     <!-- Sroll to top -->
@@ -130,30 +119,21 @@
                                 <div class="header__nav">
                                     <nav class="main-menu">
                                         <ul>
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="about-us.html">About Us</a></li>
+                                            <li><a href="index.html">home</a></li>
+                                            <li><a href="work.html">Work</a></li>
+                                            <li><a href="about-us.html">About</a></li>
                                             <li class="menu-item-has-children ">
                                                 <a href="#">Pages</a>
                                                 <ul class="dp-menu">
                                                     <li><a href="service.html">Services</a></li>
-                                                    <li><a href="careers.html">Careers</a></li>
+                                                    <li><a href="work-details.html">Work Details</a></li>
+                                                    <li><a href="blog.html">Blog</a></li>
+                                                    <li><a href="blog-details.html">Blog Details</a></li>
                                                     <li><a href="privacy.html">Privacy</a></li>
                                                 </ul>
                                             </li>
-                                            <li class="menu-item-has-children ">
-                                                <a href="#">work </a>
-                                                <ul class="dp-menu">
-                                                    <li><a href="work.html">Work</a></li>
-                                                    <li><a href="work-details.html">Work Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="menu-item-has-children ">
-                                                <a href="#">Blog</a>
-                                                <ul class="dp-menu">
-                                                    <li><a href="blog.html">Blog</a></li>
-                                                    <li><a href="blog-details.html">Blog Details</a></li>
-                                                </ul>
-                                            </li>
+                                            <li><a href="work.html">Work</a></li>
+                                            <li><a href="careers.html">Careers</a></li>
                                             <li><a href="contact.html">Contact</a></li>
                                         </ul>
                                     </nav>
@@ -208,91 +188,103 @@
                             <ul class="work-details__meta">
                                 <li><span>Category</span> - UI/UX Design</li>
                                 <li><span> Date </span>- 22/06/2025</li>
-                                <li><span>Client</span>   - Hadman Jackson</li>
-                                <li><span>Country</span>  - New York, USA</li>
+                                <li><span>Client</span> - Hadman Jackson</li>
+                                <li><span>Country</span> - New York, USA</li>
                             </ul>
                         </div>
-                            <div class="work-details__paralax">
-                                <img data-speed="0.7" src="assets/imgs/work/work-details-img-1.png" alt="img not found">
+                        <div class="work-details__paralax">
+                            <img data-speed="0.7" src="assets/imgs/work/work-details-img-1.png" alt="img not found">
+                        </div>
+                        <div class="work-details__content">
+                            <h2 class="title">Typography Hierarchy</h2>
+                            <div class="work-details__box">
+                                <p class="decs">Zara and its parent company, Inditex, are having a strong moment.
+                                    Growth, momentum, a business finding its next gear. That comes as Zara undergoes a
+                                    broader transformation – most visibly in its retail experience.</p>
+                                <p class="decs">The retail giant’s new flagship stores in European capitals London and
+                                    Madrid are undeniably impressive. Spacious, architectural and carefully curated,
+                                    they feel more like galleries or boutique hotels than traditional fashion retail.
+                                </p>
+                                <p class="decs">Alongside luxury-inspired interiors, they’re equipped with technology
+                                    designed to make moving between online and in-store shopping seamless. But they also
+                                    raise a question: are they still recognisably Zara?</p>
+                                <ul>
+                                    <li>+ Brand Development</li>
+                                    <li>+ UX/UI Design</li>
+                                    <li>+ Front-end Development</li>
+                                    <li>+ Copywriting</li>
+                                    <li>+ Shopify Development</li>
+                                </ul>
                             </div>
-                            <div class="work-details__content">
-                                <h2 class="title">Typography Hierarchy</h2>
-                                <div class="work-details__box">
-                                    <p class="decs">Zara and its parent company, Inditex, are having a strong moment. Growth, momentum, a business finding its next gear. That comes as Zara undergoes a broader transformation – most visibly in its retail experience.</p>
-                                    <p class="decs">The retail giant’s new flagship stores in European capitals London and Madrid are undeniably impressive. Spacious, architectural and carefully curated, they feel more like galleries or boutique hotels than traditional fashion retail.</p>
-                                    <p class="decs">Alongside luxury-inspired interiors, they’re equipped with technology designed to make moving between online and in-store shopping seamless. But they also raise a question: are they still recognisably Zara?</p>
-                                    <ul>
-                                        <li>+ Brand Development</li>
-                                        <li>+ UX/UI Design</li>
-                                        <li>+ Front-end Development</li>
-                                        <li>+ Copywriting</li>
-                                        <li>+  Shopify Development</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="row gy-10 gx-10">
-                                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-6">
-                                    <div class="thumb">
-                                        <img src="assets/imgs/work/work-details-img-2.jpg" alt="img ">
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
-                                    <div class="thumb">
-                                        <img src="assets/imgs/work/work-details-img-3.jpg" alt="img ">
-                                    </div>
-                                </div>
-                                <div class="col-xl-12 ">
-                                    <div class="thumb">
-                                        <img  src="assets/imgs/work/work-details-img-4.jpg" alt="img ">
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
-                                    <div class="thumb">
-                                        <img src="assets/imgs/work/work-details-img-5.jpg" alt="img ">
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
-                                    <div class="thumb">
-                                        <img src="assets/imgs/work/work-details-img-6.jpg" alt="img ">
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
-                                    <div class="thumb">
-                                        <img src="assets/imgs/work/work-details-img-7.jpg" alt="img ">
-                                    </div>
+                        </div>
+                        <div class="row gy-10 gx-10">
+                            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-6">
+                                <div class="thumb">
+                                    <img src="assets/imgs/work/work-details-img-2.jpg" alt="img ">
                                 </div>
                             </div>
-                            <div class="work-details__content">
-                                <h2 class="title">Typography Hierarchy</h2>
-                                <div class="work-details__box">
-                                    <p class="decs">Zara and its parent company, Inditex, are having a strong moment. Growth, momentum, a business finding its next gear. That comes as Zara undergoes a broader transformation – most visibly in its retail experience.</p>
-                                    <p class="decs">The retail giant’s new flagship stores in European capitals London and Madrid are undeniably impressive. Spacious, architectural and carefully curated, they feel more like galleries or boutique hotels than traditional fashion retail.</p>
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                                <div class="thumb">
+                                    <img src="assets/imgs/work/work-details-img-3.jpg" alt="img ">
                                 </div>
                             </div>
-                            <div class="work-details__paralax">
-                                <img data-speed="0.7" src="assets/imgs/work/work-details-img-8.jpg" alt="img not found">
-                            </div>
-                            <div class="work-details__wrap">
-                                <div class="work-details__item">
-                                    <div class="thumb">
-                                        <img src="assets/imgs/work/work-details-img-9.jpg" alt="img">
-                                    </div>
-                                    <div class="content">
-                                        <h2 class="title"><a href="#">Zepro Studio Inc.</a></h2>
-                                        <p class="decs">Themeforest, Webflow, Design</p>
-                                    </div>
-                                </div>
-                                <div class="work-details__item">
-                                    <div class="thumb">
-                                        <img src="assets/imgs/work/work-details-img-10.jpg" alt="img">
-                                    </div>
-                                    <div class="content">
-                                        <h2 class="title"><a href="#">Zepro Studio Inc.</a></h2>
-                                        <p class="decs">Themeforest, Webflow, Design</p>
-                                    </div>
+                            <div class="col-xl-12 ">
+                                <div class="thumb">
+                                    <img src="assets/imgs/work/work-details-img-4.jpg" alt="img ">
                                 </div>
                             </div>
-                        
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                                <div class="thumb">
+                                    <img src="assets/imgs/work/work-details-img-5.jpg" alt="img ">
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                                <div class="thumb">
+                                    <img src="assets/imgs/work/work-details-img-6.jpg" alt="img ">
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                                <div class="thumb">
+                                    <img src="assets/imgs/work/work-details-img-7.jpg" alt="img ">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="work-details__content">
+                            <h2 class="title">Typography Hierarchy</h2>
+                            <div class="work-details__box">
+                                <p class="decs">Zara and its parent company, Inditex, are having a strong moment.
+                                    Growth, momentum, a business finding its next gear. That comes as Zara undergoes a
+                                    broader transformation – most visibly in its retail experience.</p>
+                                <p class="decs">The retail giant’s new flagship stores in European capitals London and
+                                    Madrid are undeniably impressive. Spacious, architectural and carefully curated,
+                                    they feel more like galleries or boutique hotels than traditional fashion retail.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="work-details__paralax">
+                            <img data-speed="0.7" src="assets/imgs/work/work-details-img-8.jpg" alt="img not found">
+                        </div>
+                        <div class="work-details__wrap">
+                            <div class="work-details__item">
+                                <div class="thumb">
+                                    <img src="assets/imgs/work/work-details-img-9.jpg" alt="img">
+                                </div>
+                                <div class="content">
+                                    <h2 class="title"><a href="#">Zepro Studio Inc.</a></h2>
+                                    <p class="decs">Themeforest, Webflow, Design</p>
+                                </div>
+                            </div>
+                            <div class="work-details__item">
+                                <div class="thumb">
+                                    <img src="assets/imgs/work/work-details-img-10.jpg" alt="img">
+                                </div>
+                                <div class="content">
+                                    <h2 class="title"><a href="#">Zepro Studio Inc.</a></h2>
+                                    <p class="decs">Themeforest, Webflow, Design</p>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </section>
 
@@ -300,108 +292,109 @@
             <!-- footer start -->
             <footer class="footer">
                 <div class="footer__wrapper">
-                  <div class="shape"><img src="assets/imgs/home/footer-bg.png" alt="img"></div>
-                  <div class="container rr-container-1844">
-                    <a href="contact.html" class="talk-link">
-                      Let's Talk
-                      <img src="assets/imgs/icon/arrow-icon.png" alt="icon">
-                    </a>
-                    <div class="footer__widgets">
-                      <div class="footer__widget">
-                        <div class="footer__logo">
-                          <a href="#"><img src="assets/imgs/logo/logo-white.svg" alt="logo"></a>
+                    <div class="shape"><img src="assets/imgs/home/footer-bg.png" alt="img"></div>
+                    <div class="container rr-container-1844">
+                        <a href="contact.html" class="talk-link">
+                            Let's Talk
+                            <img src="assets/imgs/icon/arrow-icon.png" alt="icon">
+                        </a>
+                        <div class="footer__widgets">
+                            <div class="footer__widget">
+                                <div class="footer__logo">
+                                    <a href="#"><img src="assets/imgs/logo/logo-white.svg" alt="logo"></a>
+                                </div>
+                                <p class="desc">Industry accreditation is <br>
+                                    mark of credibility professionalism
+                                </p>
+                                <a class="email" href="mail:hello@grafinut.com">hello@grafinut.com</a>
+                            </div>
+                            <div class="footer__widget">
+                                <h2 class="title">Products</h2>
+                                <ul class="footer-links">
+                                    <li><a href="contact.html">Modet Ai </a></li>
+                                    <li><a href="contact.html">Reski</a></li>
+                                    <li><a href="contact.html">Grofund</a></li>
+                                    <li><a href="contact.html">Zoon Shaper</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="footer__widget">
+                                <h2 class="title">Discover</h2>
+                                <ul class="footer-links">
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="contact.html">Journal</a></li>
+                                    <li><a href="work.html">Work</a></li>
+                                    <li><a href="careers.html">Careers</a>
+                                    <li><a href="contact.html">Contact Us</a>
+                                    <li><a href="contact.html">Legal Hub</a>
+                                    <li><a href="service.html">Service</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <p class="desc">Industry accreditation is <br>
-                          mark of credibility professionalism
-                        </p>
-                        <a class="email" href="mail:hello@grafinut.com">hello@grafinut.com</a>
-                      </div>
-                      <div class="footer__widget">
-                        <h2 class="title">Products</h2>
-                        <ul class="footer-links">
-                          <li><a href="contact.html">Modet Ai </a></li>
-                          <li><a href="contact.html">Reski</a></li>
-                          <li><a href="contact.html">Grofund</a></li>
-                          <li><a href="contact.html">Zoon Shaper</a>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="footer__widget">
-                        <h2 class="title">Discover</h2>
-                        <ul class="footer-links">
-                          <li><a href="about.html">About Us</a></li>
-                          <li><a href="contact.html">Journal</a></li>
-                          <li><a href="work.html">Work</a></li>
-                          <li><a href="careers.html">Careers</a>
-                          <li><a href="contact.html">Contact Us</a>
-                          <li><a href="contact.html">Legal Hub</a>
-                          <li><a href="service.html">Service</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="footer__socail">
-                      <ul>
-                        <li><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a href="https://www.twitter.com/"><i class="fa-brands fa-x-twitter"></i></a></li>
-                        <li><a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                        <li><a href="https://www.behance.com/"><i class="fa-brands fa-behance"></i></a></li>
-                        <li><a href="https://www.dribbble.com/"><i class="fa-brands fa-dribbble"></i></a></li>
-                        <li><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a></li>
-                      </ul>
-                    </div>
-                    <div class="footer__office">
-                      <div class="office__wrapper">
-                        <h2 class="office__title">Office Location</h2>
-                        <div class="office__item">
-                          <div class="office__head">
-                            <h3 class="title">Selamat Datang</h3>
-                            <span class="office__time" data-timezone="Asia/Kuala_Lumpur">01:52:57</span>
-                          </div>
-                          <p class="office__city">Kuala Lumpur</p>
-                          <h2 class="office__address">
-                            <a href="#">Neu Suite, Jalan Nipah, Kampung <br>
-                              Berembang, 55000, Kuala Lumpur, Malaysia</a>
-                          </h2>
-                          <a href="tel:+601916449447" class="office__phone">
-                            <i class="fa-solid fa-phone-volume"></i>+60 19-644 9447
-                          </a>
+                        <div class="footer__socail">
+                            <ul>
+                                <li><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="https://www.twitter.com/"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                <li><a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin-in"></i></a>
+                                </li>
+                                <li><a href="https://www.behance.com/"><i class="fa-brands fa-behance"></i></a></li>
+                                <li><a href="https://www.dribbble.com/"><i class="fa-brands fa-dribbble"></i></a></li>
+                                <li><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            </ul>
                         </div>
-                        <div class="office__item">
-                          <div class="office__head">
-                            <h3 class="title">স্বাগতম</h3>
-                            <span class="office__time" data-timezone="Asia/Kuala_Lumpur">01:52:57</span>
-                          </div>
-                          <p class="office__city">Kuala Lumpur</p>
-                          <h2 class="office__address">
-                            <a href="#">Floor 3rd, Apartment 154, <br> Road C1, 1430 Dhaka, Bangladesh</a>
-                          </h2>
-                          <a href="tel:+601916449447" class="office__phone">
-                            <i class="fa-solid fa-phone-volume"></i>+880 1750-520142
-                          </a>
+                        <div class="footer__office">
+                            <div class="office__wrapper">
+                                <h2 class="office__title">Office Location</h2>
+                                <div class="office__item">
+                                    <div class="office__head">
+                                        <h3 class="title">Selamat Datang</h3>
+                                        <span class="office__time" data-timezone="Asia/Kuala_Lumpur">01:52:57</span>
+                                    </div>
+                                    <p class="office__city">Kuala Lumpur</p>
+                                    <h2 class="office__address">
+                                        <a href="#">Neu Suite, Jalan Nipah, Kampung <br>
+                                            Berembang, 55000, Kuala Lumpur, Malaysia</a>
+                                    </h2>
+                                    <a href="tel:+601916449447" class="office__phone">
+                                        <i class="fa-solid fa-phone-volume"></i>+60 19-644 9447
+                                    </a>
+                                </div>
+                                <div class="office__item">
+                                    <div class="office__head">
+                                        <h3 class="title">স্বাগতম</h3>
+                                        <span class="office__time" data-timezone="Asia/Kuala_Lumpur">01:52:57</span>
+                                    </div>
+                                    <p class="office__city">Dhaka</p>
+                                    <h2 class="office__address">
+                                        <a href="#">Floor 3rd, Apartment 154, <br> Road C1, 1430 Dhaka, Bangladesh</a>
+                                    </h2>
+                                    <a href="tel:+601916449447" class="office__phone">
+                                        <i class="fa-solid fa-phone-volume"></i>+880 1750-520142
+                                    </a>
+                                </div>
+                                <div class="office__item">
+                                    <div class="office__head">
+                                        <h3 class="title">สวัสดีครับี</h3>
+                                        <span class="office__time" data-timezone="Asia/Kuala_Lumpur">01:52:57</span>
+                                    </div>
+                                    <p class="office__city">Trang</p>
+                                    <h2 class="office__address">
+                                        <a href="#">71, V7, Nai Khuan, <br> Yan Ta Khao-92140, Trang, Thailand</a>
+                                    </h2>
+                                    <a href="tel:+601916449447" class="office__phone">
+                                        <i class="fa-solid fa-phone-volume"></i>+66 94 545 8855
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="office__item">
-                          <div class="office__head">
-                            <h3 class="title">สวัสดีครับี</h3>
-                            <span class="office__time" data-timezone="Asia/Kuala_Lumpur">01:52:57</span>
-                          </div>
-                          <p class="office__city">Trang</p>
-                          <h2 class="office__address">
-                            <a href="#">71, V7, Nai Khuan, <br> Yan Ta Khao-92140, Trang, Thailand</a>
-                          </h2>
-                          <a href="tel:+601916449447" class="office__phone">
-                            <i class="fa-solid fa-phone-volume"></i>+66 94 545 8855
-                          </a>
+                        <div class="footer__bottom">
+                            <h2 class="footer__url">https://Grafinut.Com</h2>
+                            <p class="footer__copy-right">© 2025 Grafinut. All rights reserved.</p>
                         </div>
-                      </div>
                     </div>
-                    <div class="footer__bottom">
-                      <h2 class="footer__url">https://Grafinut.Com</h2>
-                      <p class="footer__copy-right">© 2025 Grafinut. All rights reserved.</p>
-                    </div>
-                  </div>
                 </div>
-              </footer>
+            </footer>
             <!-- footer end -->
         </div>
 
