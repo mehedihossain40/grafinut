@@ -1965,6 +1965,243 @@
 
 // work-section css
 
+.work-section {
+    &__info {
+        margin-bottom: 110px;
+
+        @media #{$md} {
+            margin-bottom: 40px;
+        }
+
+        .title {
+            font-weight: 600;
+            font-size: 100px;
+            line-height: 90px;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+            max-width: 945px;
+
+            span {
+                color: var(--theme);
+            }
+
+            @media #{$md} {
+                font-size: 65px;
+                line-height: 1.1;
+            }
+
+            @media #{$sm} {
+                font-size: 45px;
+                line-height: 1.1
+            }
+
+            @media #{$xs} {
+                font-size: 29px;
+                line-height: 1.2;
+            }
+        }
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 100px 10px;
+
+        >.work-section__item {
+            &:nth-child(5n + 1) {
+                grid-column: 1 / span 4;
+                grid-row: 1;
+                margin-right: 34px;
+            }
+
+            &:nth-child(5n + 2) {
+                grid-column: 5 / span 5;
+                grid-row: 1;
+                margin-inline: -13px 45px;
+            }
+
+            &:nth-child(5n + 3) {
+                grid-column: 1 / span 4;
+                grid-row: 2;
+                margin-top: 635px;
+                margin-right: 34px;
+            }
+
+            &:nth-child(5n + 4) {
+                grid-column: 5 / span 4;
+                grid-row: 2;
+                align-self: start;
+                margin-inline: -13px -77px;
+            }
+
+            &:nth-child(5n + 5) {
+                grid-column: 10 / span 4;
+                grid-row: 2;
+                align-self: start;
+                margin-left: -60px;
+            }
+        }
+
+        .work-section__btn {
+            grid-column: 5 / span 4;
+            grid-row: 2;
+            align-self: end;
+            z-index: 2;
+
+            @media #{$lg} {
+                grid-row: 3;
+            }
+        }
+
+        @media #{$xxl} {
+            gap: 60px 25px;
+
+            >.work-section__item {
+                &:nth-child(5n + 1) {
+                    margin-right: 0;
+                }
+
+                &:nth-child(5n + 2),
+                &:nth-child(5n + 4),
+                &:nth-child(5n + 5) {
+                    margin-inline: 0;
+                }
+
+                &:nth-child(5n + 3) {
+                    grid-column: 1 / span 4;
+                    grid-row: 2;
+                    margin-top: 635px;
+                    margin-right: 0px;
+                    @media #{$xl} {
+                        margin-top: 320px;
+                    }
+                }
+
+                &:nth-child(5n + 5) {
+                    grid-column: 9 / span 4;
+                }
+            }
+        }
+
+        // @media #{$xl} {
+        //     >.work-section__item {
+        //         &:nth-child(5n + 2) {
+        //             grid-column: 5 / span 7;
+        //             margin-right: 0;
+        //         }
+        //     }
+        // }
+
+        @media #{$lg} {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px 20px;
+
+            >.work-section__item,
+            >.work-section__item:nth-child(n),
+            >.work-section__btn {
+                grid-column: auto;
+                grid-row: auto;
+                align-self: auto;
+                margin: 0;
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
+        @media #{$xs} {
+            grid-template-columns: 1fr;
+            gap: 20px;
+
+            >*,
+            >*:nth-child(n) {
+                grid-column: auto;
+                grid-row: auto;
+                align-self: auto;
+                margin: 0;
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+    }
+
+    &__btn {
+        transform: translateY(-82px);
+
+        @media #{$lg} {
+            transform: none;
+        }
+
+        .rr-btn {
+            text-transform: none;
+        }
+    }
+
+    &__thumb {
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__content {
+        margin-top: 25px;
+
+        .title {
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 26px;
+            letter-spacing: -0.03em;
+            margin-bottom: 7px;
+
+            @media #{$sm} {
+                font-size: 20px;
+                line-height: 24px;
+            }
+        }
+
+        .decs {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 26px;
+            letter-spacing: -0.03em;
+            color: #999999;
+        }
+    }
+
+    &__thumb {
+        position: relative;
+        overflow: hidden;
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+
+    &__gif {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+        pointer-events: none;
+    }
+
+    &__item:hover &__gif {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+
 // .work-section {
 //     &__info {
 //         margin-bottom: 110px;
@@ -2048,7 +2285,7 @@
 //             align-self: end;
 //             z-index: 2;
 
-//             @media #{$lg} {
+//             @media #{$xxl} {
 //                 grid-row: 3;
 //             }
 //         }
@@ -2068,13 +2305,8 @@
 //                 }
 
 //                 &:nth-child(5n + 3) {
-//                     grid-column: 1 / span 4;
-//                     grid-row: 2;
-//                     margin-top: 635px;
-//                     margin-right: 0px;
-//                     @media #{$xl} {
-//                         margin-top: 320px;
-//                     }
+//                     margin-top: 100px;
+//                     margin-right: 0;
 //                 }
 
 //                 &:nth-child(5n + 5) {
@@ -2083,14 +2315,14 @@
 //             }
 //         }
 
-//         // @media #{$xl} {
-//         //     >.work-section__item {
-//         //         &:nth-child(5n + 2) {
-//         //             grid-column: 5 / span 7;
-//         //             margin-right: 0;
-//         //         }
-//         //     }
-//         // }
+//         @media #{$xl} {
+//             >.work-section__item {
+//                 &:nth-child(5n + 2) {
+//                     grid-column: 5 / span 7;
+//                     margin-right: 0;
+//                 }
+//             }
+//         }
 
 //         @media #{$lg} {
 //             grid-template-columns: repeat(2, 1fr);
@@ -2127,7 +2359,7 @@
 //     &__btn {
 //         transform: translateY(-82px);
 
-//         @media #{$lg} {
+//         @media #{$xxl} {
 //             transform: none;
 //         }
 
@@ -2201,240 +2433,6 @@
 //     }
 // }
 
-// koyta group (proti group = 5 ta item) hobe seta ekhane dao
-// 2 group = 10 item, 3 group = 15 item
-$work-groups: 2;
-
-.work-section {
-    &__info {
-        margin-bottom: 110px;
-
-        @media #{$md} {
-            margin-bottom: 40px;
-        }
-
-        .title {
-            font-weight: 600;
-            font-size: 100px;
-            line-height: 90px;
-            letter-spacing: -0.05em;
-            text-transform: uppercase;
-            max-width: 945px;
-
-            span {
-                color: var(--theme);
-            }
-
-            @media #{$md} {
-                font-size: 65px;
-                line-height: 1.1;
-            }
-
-            @media #{$sm} {
-                font-size: 45px;
-                line-height: 1.1;
-            }
-
-            @media #{$xs} {
-                font-size: 29px;
-                line-height: 1.2;
-            }
-        }
-    }
-
-    &__wrapper {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        gap: 100px 10px;
-
-        // column, margin (row ekhane nei)
-        >.work-section__item {
-            &:nth-child(5n + 1) {
-                grid-column: 1 / span 4;
-                margin-right: 34px;
-            }
-
-            &:nth-child(5n + 2) {
-                grid-column: 5 / span 5;
-                margin-inline: -13px 45px;
-            }
-
-            &:nth-child(5n + 3) {
-                grid-column: 1 / span 4;
-                margin-top: 635px;
-                margin-right: 34px;
-            }
-
-            &:nth-child(5n + 4) {
-                grid-column: 5 / span 4;
-                align-self: start;
-                margin-inline: -13px -77px;
-            }
-
-            &:nth-child(5n + 5) {
-                grid-column: 10 / span 4;
-                align-self: start;
-                margin-left: -60px;
-            }
-        }
-
-        // proti 5 ta item er group er jonno alada row
-        // group 1 = row 1,2 | group 2 = row 3,4 | group 3 = row 5,6 ...
-        @for $g from 0 through 9 {
-            $n: $g * 5;
-            $r: $g * 2;
-
-            >.work-section__item:nth-child(#{$n + 1}),
-            >.work-section__item:nth-child(#{$n + 2}) {
-                grid-row: #{$r + 1};
-            }
-
-            >.work-section__item:nth-child(#{$n + 3}),
-            >.work-section__item:nth-child(#{$n + 4}),
-            >.work-section__item:nth-child(#{$n + 5}) {
-                grid-row: #{$r + 2};
-            }
-        }
-
-        // button sobsheshe group er 2nd row e thakbe
-        .work-section__btn {
-            grid-column: 5 / span 4;
-            grid-row: #{$work-groups * 2};
-            align-self: end;
-            z-index: 2;
-
-            @media #{$lg} {
-                grid-row: 3;
-            }
-        }
-
-        @media #{$xxl} {
-            gap: 60px 25px;
-
-            >.work-section__item {
-                &:nth-child(5n + 1) {
-                    margin-right: 0;
-                }
-
-                &:nth-child(5n + 2),
-                &:nth-child(5n + 4),
-                &:nth-child(5n + 5) {
-                    margin-inline: 0;
-                }
-
-                &:nth-child(5n + 3) {
-                    margin-top: 635px;
-                    margin-right: 0;
-
-                    @media #{$xl} {
-                        margin-top: 320px;
-                    }
-                }
-
-                &:nth-child(5n + 5) {
-                    grid-column: 9 / span 4;
-                }
-            }
-        }
-
-        @media #{$lg} {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px 20px;
-
-            >.work-section__item,
-            >.work-section__item:nth-child(n),
-            >.work-section__btn {
-                grid-column: auto;
-                grid-row: auto;
-                align-self: auto;
-                margin: 0;
-                width: 100%;
-                max-width: 100%;
-            }
-        }
-
-        @media #{$xs} {
-            grid-template-columns: 1fr;
-            gap: 20px;
-
-            >*,
-            >*:nth-child(n) {
-                grid-column: auto;
-                grid-row: auto;
-                align-self: auto;
-                margin: 0;
-                width: 100%;
-                max-width: 100%;
-            }
-        }
-    }
-
-    &__btn {
-        transform: translateY(-82px);
-
-        @media #{$lg} {
-            transform: none;
-        }
-
-        .rr-btn {
-            text-transform: none;
-        }
-    }
-
-    &__thumb {
-        position: relative;
-        overflow: hidden;
-
-        img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    }
-
-    &__content {
-        margin-top: 25px;
-
-        .title {
-            font-weight: 500;
-            font-size: 24px;
-            line-height: 26px;
-            letter-spacing: -0.03em;
-            margin-bottom: 7px;
-
-            @media #{$sm} {
-                font-size: 20px;
-                line-height: 24px;
-            }
-        }
-
-        .decs {
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 26px;
-            letter-spacing: -0.03em;
-            color: #999999;
-        }
-    }
-
-    &__gif {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.4s ease, visibility 0.4s ease;
-        pointer-events: none;
-    }
-
-    &__item:hover &__gif {
-        opacity: 1;
-        visibility: visible;
-    }
-}
 
 // bento css
 
@@ -3044,30 +3042,6 @@ $work-groups: 2;
 
 }
 
-// .loader {
-//     position: fixed;
-//     inset: 0;
-//     z-index: 99999;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     background: #fff;
-  
-//     &__word {
-//       font-size: clamp(4rem, 10vw, 9rem);
-//       font-weight: 700;
-//       letter-spacing: -0.04em;
-//       line-height: 1;
-//       color: #111;
-//       white-space: nowrap;
-//       will-change: opacity, transform;
-//     }
-//   }
-  
-//   html.is-loading,
-//   html.is-loading body {
-//     overflow: hidden;
-//   }
 
 
 .loader {

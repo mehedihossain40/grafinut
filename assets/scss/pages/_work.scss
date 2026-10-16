@@ -188,14 +188,19 @@
 
 
 
+
+$work-groups: 2;
+
 .work-page {
     &__wrapper {
         margin-bottom: 100px;
         padding-top: 140px;
+
         @media #{$lg} {
             padding-top: 50px;
             margin-bottom: 40px;
         }
+
         .title {
             font-weight: 500;
             font-size: 100px;
@@ -203,25 +208,28 @@
             letter-spacing: -0.05em;
             text-transform: uppercase;
             max-width: 1486px;
+
             @media #{$xl} {
                 font-size: 86px;
                 line-height: 1;
             }
+
             @media #{$lg} {
                 font-size: 68px;
                 line-height: 1;
             }
+
             @media #{$sm} {
                 font-size: 41px;
                 line-height: 1.2;
             }
+
             @media #{$xs} {
                 font-size: 27px;
                 line-height: 1.2;
             }
         }
     }
-
 
     .nav-pills {
         display: flex;
@@ -233,6 +241,7 @@
         padding: 26.5px 0;
         margin-top: 70px;
         flex-wrap: wrap;
+
         @media #{$lg} {
             margin-top: 30px;
         }
@@ -253,6 +262,7 @@
         transition: all 0.2s ease;
         width: 100%;
         padding: 0;
+
         &.active,
         &:hover {
             background: transparent;
@@ -275,12 +285,12 @@
         }
     }
 
-    &__inner {
+    &__inner{
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         gap: 100px 10px;
 
-        >* {
+        >.work-page__item {
             &:nth-child(5n + 1) {
                 grid-column: 1 / span 4;
                 margin-right: 34px;
@@ -288,7 +298,7 @@
 
             &:nth-child(5n + 2) {
                 grid-column: 5 / span 5;
-                margin-inline: -13px  45px ;
+                margin-inline: -13px 45px;
             }
 
             &:nth-child(5n + 3) {
@@ -299,33 +309,78 @@
 
             &:nth-child(5n + 4) {
                 grid-column: 5 / span 4;
+                align-self: start;
                 margin-inline: -13px -77px;
             }
 
             &:nth-child(5n + 5) {
                 grid-column: 10 / span 4;
+                align-self: start;
                 margin-left: -60px;
             }
         }
 
-        // ---------- xxl ----------
+
+        @for $g from 0 through 9 {
+            $n: $g * 5;
+            $r: $g * 2;
+
+            >.work-page__item:nth-child(#{$n + 1}),
+            >.work-page__item:nth-child(#{$n + 2}) {
+                grid-row: #{$r + 1};
+            }
+
+            >.work-page__item:nth-child(#{$n + 3}),
+            >.work-page__item:nth-child(#{$n + 4}),
+            >.work-page__item:nth-child(#{$n + 5}) {
+                grid-row: #{$r + 2};
+            }
+        }
+
+
+        .work-page__btn {
+            grid-column: 5 / span 4;
+            grid-row: #{$work-groups * 2};
+            align-self: end;
+            z-index: 2;
+
+            @media #{$lg} {
+                grid-row: 3;
+            }
+        }
+
+        .work-page__btnn {
+            grid-column: 5 / span 4;
+            grid-row: 2;
+            align-self: end;
+            z-index: 2;
+
+            @media #{$lg} {
+                grid-row: 3;
+            }
+        }
+
         @media #{$xxl} {
             gap: 60px 25px;
 
-            >* {
+            >.work-page__item {
                 &:nth-child(5n + 1) {
                     margin-right: 0;
                 }
+
                 &:nth-child(5n + 2),
-                
                 &:nth-child(5n + 4),
                 &:nth-child(5n + 5) {
                     margin-inline: 0;
                 }
 
                 &:nth-child(5n + 3) {
-                    margin-top: 100px;
+                    margin-top: 635px;
                     margin-right: 0;
+
+                    @media #{$xl} {
+                        margin-top: 320px;
+                    }
                 }
 
                 &:nth-child(5n + 5) {
@@ -334,35 +389,31 @@
             }
         }
 
-        // ---------- xl ----------
-        @media #{$xl} {
-            >* {
-                &:nth-child(5n + 2) {
-                    grid-column: 5 / span 7;
-                    margin-right: 0;
-                }
-            }
-        }
-
         @media #{$lg} {
             grid-template-columns: repeat(2, 1fr);
             gap: 40px 20px;
 
-            >*,
-            >*:nth-child(n) {
+            >.work-page__item,
+            >.work-page__item:nth-child(n),
+            >.work-page__btn {
                 grid-column: auto;
+                grid-row: auto;
+                align-self: auto;
                 margin: 0;
                 width: 100%;
                 max-width: 100%;
             }
         }
+
         @media #{$xs} {
-            grid-template-columns: repeat(1, 1fr);
-            gap:  20px;
+            grid-template-columns: 1fr;
+            gap: 20px;
 
             >*,
             >*:nth-child(n) {
                 grid-column: auto;
+                grid-row: auto;
+                align-self: auto;
                 margin: 0;
                 width: 100%;
                 max-width: 100%;
@@ -370,7 +421,34 @@
         }
     }
 
+    &__btn {
+        transform: translateY(-82px);
+
+        @media #{$lg} {
+            transform: none;
+        }
+
+        .rr-btn {
+            text-transform: none;
+        }
+    }
+
+    &__btnn {
+        transform: translateY(-82px);
+
+        @media #{$lg} {
+            transform: none;
+        }
+
+        .rr-btn {
+            text-transform: none;
+        }
+    }
+
     &__thumb {
+        position: relative;
+        overflow: hidden;
+
         img {
             display: block;
             width: 100%;
@@ -388,6 +466,11 @@
             line-height: 26px;
             letter-spacing: -0.03em;
             margin-bottom: 7px;
+
+            @media #{$sm} {
+                font-size: 20px;
+                line-height: 24px;
+            }
         }
 
         .decs {
@@ -397,5 +480,22 @@
             letter-spacing: -0.03em;
             color: #999999;
         }
+    }
+
+    &__gif {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+        pointer-events: none;
+    }
+
+    &__item:hover &__gif {
+        opacity: 1;
+        visibility: visible;
     }
 }

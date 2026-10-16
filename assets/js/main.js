@@ -708,6 +708,29 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  console.log('canHover:', canHover);
+
+  document.querySelectorAll('.work-page__item').forEach((item) => {
+    const video = item.querySelector('.work-page__video');
+    if (!video) return;
+
+    item.addEventListener('mouseenter', () => {
+      item.classList.add('is-playing');
+      video.play().catch((err) => console.log('play error:', err));
+    });
+
+    item.addEventListener('mouseleave', () => {
+      item.classList.remove('is-playing');
+      video.pause();
+      setTimeout(() => {
+        if (!item.classList.contains('is-playing')) video.currentTime = 0;
+      }, 400);
+    });
+  });
+});
+
 
 AOS.init({
   once: true
