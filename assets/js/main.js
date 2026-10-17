@@ -638,6 +638,8 @@ document.addEventListener("DOMContentLoaded", function () {
 function ShowcaseSnapSlider() {
   if ($('.rr-snap-slider-holder').length > 0) {
 
+    gsap.registerPlugin(ScrollTrigger);
+
     const mm = gsap.matchMedia();
     mm.add("(min-width: 1199px)", () => {
       const snapSlides = gsap.utils.toArray(".rr-snap-slide");
@@ -665,6 +667,8 @@ function ShowcaseSnapSlider() {
         );
       });
     });
+
+    window.addEventListener("load", () => ScrollTrigger.refresh());
   }
 }
 
