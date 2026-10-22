@@ -312,7 +312,7 @@ if ($(".fade-wrapper").length > 0) {
             // animate number position
             num.style.left = value + "%";
 
-            observer.unobserve(outer); // ekbar animate hole ar na
+            observer.unobserve(outer); 
           }
         });
       },
@@ -390,59 +390,8 @@ if ($(".fade-wrapper").length > 0) {
 
 
 
-  const select = document.querySelector(".custom-select");
-  const selected = select.querySelector(".selected");
-  const options = select.querySelectorAll(".dropdown li");
-
-  selected.addEventListener("click", () => {
-    select.classList.toggle("active");
-  });
-
-  options.forEach(option => {
-    option.addEventListener("click", () => {
-      selected.innerHTML = option.innerHTML + '<i class="fa-light fa-angle-down"></i>';
-      select.classList.remove("active");
-    });
-  });
-
-  // click outside close
-  document.addEventListener("click", (e) => {
-    if (!select.contains(e.target)) {
-      select.classList.remove("active");
-    }
-  });
 
 
-  var testimonial_active = new Swiper(".testimonial__active", {
-    spaceBetween: 20,
-    loop: true,
-    autoplay: true,
-    speed: 2000,
-    navigation: {
-      nextEl: ".rr-button-next",
-      prevEl: ".rr-button-prev",
-    },
-    pagination: {
-      el: ".testimonial-pagination",
-      clickable: true,
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-      },
-      576: {
-        slidesPerView: 2,
-      },
-      993: {
-        slidesPerView: 3,
-      },
-
-      1400: {
-        slidesPerView: 4,
-        slidesPerGroup: 1,
-      },
-    },
-  });
 
 
   if ($(".work-process__section").length > 0) {
@@ -522,16 +471,70 @@ if (document.querySelectorAll(".progress-ring__circle").length > 0) {
 
 
 $(function () {
+  const $times = $(".office__time");
+  const formatters = {};
+
+  function getFormatter(tz) {
+    if (!formatters[tz]) {
+      formatters[tz] = new Intl.DateTimeFormat("en-GB", {
+        timeZone: tz,
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: true,
+      });
+    }
+    return formatters[tz];
+  }
+
   function tick() {
-    $(".office__time").each(function () {
+    const now = new Date();
+    $times.each(function () {
       const tz = $(this).data("timezone");
-      $(this).text(
-        new Date().toLocaleTimeString("en-GB", { timeZone: tz, hour12: false })
-      );
+      $(this).text(getFormatter(tz).format(now));
     });
   }
+
   tick();
-  setInterval(tick, 1000);
+
+  // sync to the start of each second
+  setTimeout(function () {
+    tick();
+    setInterval(tick, 1000);
+  }, 1000 - (Date.now() % 1000));
+});
+$(function () {
+  const $times = $(".office-2__time");
+  const formatters = {};
+
+  function getFormatter(tz) {
+    if (!formatters[tz]) {
+      formatters[tz] = new Intl.DateTimeFormat("en-GB", {
+        timeZone: tz,
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: true,
+      });
+    }
+    return formatters[tz];
+  }
+
+  function tick() {
+    const now = new Date();
+    $times.each(function () {
+      const tz = $(this).data("timezone");
+      $(this).text(getFormatter(tz).format(now));
+    });
+  }
+
+  tick();
+
+  // sync to the start of each second
+  setTimeout(function () {
+    tick();
+    setInterval(tick, 1000);
+  }, 1000 - (Date.now() % 1000));
 });
 
 
@@ -689,86 +692,81 @@ new Swiper('.word-slider__swiper', {
 });
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-  console.log('canHover:', canHover);
-
-  document.querySelectorAll('.work-section__item').forEach((item) => {
-    const video = item.querySelector('.work-section__video');
-    if (!video) return;
-
-    item.addEventListener('mouseenter', () => {
-      item.classList.add('is-playing');
-      video.play().catch((err) => console.log('play error:', err));
-    });
-
-    item.addEventListener('mouseleave', () => {
-      item.classList.remove('is-playing');
-      video.pause();
-      setTimeout(() => {
-        if (!item.classList.contains('is-playing')) video.currentTime = 0;
-      }, 400);
-    });
-  });
-});
 
 document.addEventListener('DOMContentLoaded', () => {
   const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-  console.log('canHover:', canHover);
+  if (!canHover) return; // touch device e first media-ই thakbe
 
-  document.querySelectorAll('.work-page__item').forEach((item) => {
-    const video = item.querySelector('.work-page__video');
-    if (!video) return;
+  const STEP_TIME = 900; // protita media koto ms dekhabe
+
+  document.querySelectorAll('.js-hover-gallery').forEach((item) => {
+    const gallery = item.querySelector('[class$="__gallery"]');
+    const medias = item.querySelectorAll('[class$="__media"]');
+    if (!gallery || medias.length < 2) return;
+
+    let index = 0;
+    let timer = null;
+
+    const show = (i) => {
+      index = i;
+      gallery.style.transform = `translateX(-${index * 100}%)`;
+
+      medias.forEach((m, n) => {
+        const video = m.querySelector('video');
+        if (!video) return;
+        if (n === index) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    };
+
+    const next = () => show((index + 1) % medias.length);
 
     item.addEventListener('mouseenter', () => {
-      item.classList.add('is-playing');
-      video.play().catch((err) => console.log('play error:', err));
+      clearInterval(timer);
+      show(0);
+      timer = setInterval(next, STEP_TIME);
     });
 
     item.addEventListener('mouseleave', () => {
-      item.classList.remove('is-playing');
-      video.pause();
-      setTimeout(() => {
-        if (!item.classList.contains('is-playing')) video.currentTime = 0;
-      }, 400);
+      clearInterval(timer);
+      show(0);
+      medias.forEach((m) => {
+        const video = m.querySelector('video');
+        if (video) {
+          video.pause();
+          video.currentTime = 0;
+        }
+      });
     });
   });
 });
-
 
 AOS.init({
   once: true
 });
 
 
-const thumbs = document.querySelectorAll('.testimonial__thumb');
 
-function stopAllVideos() {
-  thumbs.forEach(thumb => {
-    const video = thumb.querySelector('.testimonial__player');
-    video.pause();
-    thumb.classList.remove('is-playing');
+
+function handleVideos(swiper) {
+  swiper.slides.forEach((slide) => {
+    const video = slide.querySelector("video");
+    if (!video) return;
+
+    const isVisible =
+      slide.classList.contains("swiper-slide-active") ||
+      slide.classList.contains("swiper-slide-next") && swiper.params.slidesPerView > 1;
+
+    if (isVisible) {
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+    }
   });
 }
-
-thumbs.forEach(thumb => {
-  const playBtn = thumb.querySelector('.testimonial__play');
-  const video = thumb.querySelector('.testimonial__player');
-
-  playBtn.addEventListener('click', e => {
-    e.preventDefault();
-    stopAllVideos();
-    thumb.classList.add('is-playing');
-    video.play();
-  });
-
-  // video shesh hole abar image + play icon dekhabe
-  video.addEventListener('ended', () => {
-    thumb.classList.remove('is-playing');
-    video.currentTime = 0;
-  });
-});
-
 
 (function () {
   const loader = document.querySelector("[data-loader]");
@@ -805,6 +803,125 @@ thumbs.forEach(thumb => {
 
   window.addEventListener("load", runLoader);
 })();
+
+
+// ===== Testimonial video + slider =====
+
+const testimonialObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      const video = entry.target;
+
+      if (entry.isIntersecting) {
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+        video.muted = true; 
+      }
+    });
+  },
+  { threshold: 0.3 }
+);
+
+
+function observeTestimonialVideos() {
+  document
+    .querySelectorAll(".testimonial__active video")
+    .forEach((video) => testimonialObserver.observe(video));
+}
+
+// 3) Swiper init
+var testimonial_active = new Swiper(".testimonial__active", {
+  spaceBetween: 20,
+  loop: true,
+  speed: 2000,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true, // mouse video er upor thakle slider thambe
+  },
+  navigation: {
+    nextEl: ".rr-button-next",
+    prevEl: ".rr-button-prev",
+  },
+  pagination: {
+    el: ".testimonial-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    320: { slidesPerView: 1 },
+    576: { slidesPerView: 2 },
+    993: { slidesPerView: 3 },
+    1400: { slidesPerView: 4, slidesPerGroup: 1 },
+  },
+  on: {
+    init: observeTestimonialVideos,
+    breakpoint: observeTestimonialVideos,
+    loopFix: observeTestimonialVideos,
+  },
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.work-section__thumb').forEach((thumb) => {
+    const slides = thumb.querySelectorAll('.work-section__slide:not(.is-base)');
+    if (!slides.length) return;
+
+    let current = -1;
+
+    const setActive = (index) => {
+      if (index === current) return;
+      current = index;
+      slides.forEach((s, i) => s.classList.toggle('is-active', i === index));
+      thumb.classList.toggle('has-active', index !== -1);
+    };
+
+    thumb.addEventListener('mousemove', (e) => {
+      const rect = thumb.getBoundingClientRect();
+      let i = Math.floor(((e.clientX - rect.left) / rect.width) * slides.length);
+      i = Math.max(0, Math.min(slides.length - 1, i));
+      setActive(i);
+    });
+
+    thumb.addEventListener('mouseleave', () => setActive(-1)); // cover e ferot
+  });
+});
+
+
+
+
+(function () {
+  const groups = Array.from(document.querySelectorAll('.work-page__inner'));
+  if (!groups.length) return;
+
+  const btnOf = (g) => g.querySelector('.work-page__btn');
+
+  groups.forEach((g, i) => {
+    g.hidden = i !== 0;
+    g.querySelectorAll('.is-hidden').forEach((el) => el.classList.remove('is-hidden'));
+
+    btnOf(g).classList.toggle('is-done', !(i === 0 && groups[1]));
+  });
+
+  groups.forEach((g, i) => {
+    const link = g.querySelector('[data-load-more]');
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      btnOf(g).classList.add('is-done');  
+
+      const next = groups[i + 1];
+      if (!next) return;
+
+      next.hidden = false;                   
+
+      btnOf(next).classList.toggle('is-done', !groups[i + 2]);
+
+      if (window.AOS) AOS.refreshHard();
+    });
+  });
+})();
+
+
 
 })(jQuery);
 

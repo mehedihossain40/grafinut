@@ -231,7 +231,7 @@ $work-groups: 2;
         }
     }
 
-    .nav-pills {
+    &__list {
         display: flex;
         align-items: center;
         gap: 15px;
@@ -241,47 +241,16 @@ $work-groups: 2;
         padding: 26.5px 0;
         margin-top: 70px;
         flex-wrap: wrap;
-
         @media #{$lg} {
             margin-top: 30px;
         }
-    }
-
-    .nav-link {
-        list-style: none;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 22px;
-        color: #111111;
-        font-family: var(--font_bai-jamjuree);
-        list-style: none;
-        transition: all .3s ease-in-out;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        transition: all 0.2s ease;
-        width: 100%;
-        padding: 0;
-
-        &.active,
-        &:hover {
-            background: transparent;
-            color: var(--primary);
-            text-decoration-line: underline;
-
-        }
-    }
-
-    .tab-content {
-        .tab-pane {
-            opacity: 0;
-            transform: translateY(25px);
-            transition: all 0.3s ease-in-out;
-        }
-
-        .tab-pane.show.active {
-            opacity: 1;
-            transform: translateY(0);
+        li {
+            list-style: none;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 22px;
+            color: #111111;
+            font-family: var(--font_bai-jamjuree);
         }
     }
 
@@ -378,6 +347,9 @@ $work-groups: 2;
                     margin-top: 635px;
                     margin-right: 0;
 
+                    @media #{$xxl} {
+                        margin-top: 470px;
+                    }
                     @media #{$xl} {
                         margin-top: 320px;
                     }
@@ -498,4 +470,45 @@ $work-groups: 2;
         opacity: 1;
         visibility: visible;
     }
+
+    &__inner {
+        &[hidden] {
+            display: none; // display:grid hidden attribute ke override kore, tai eta lagbe
+        }
+    
+        & + & {
+            margin-top: 100px;
+    
+            @media #{$lg} {
+                margin-top: 40px;
+            }
+        }
+    
+        // ... baki ager code
+    }
+    &__btn {
+        transform: translateY(-82px);
+    
+        @media #{$lg} {
+            transform: none;
+        }
+    
+        &.is-done {
+            display: none;
+        }
+    
+        .rr-btn {
+            text-transform: none;
+        }
+    }
+    // .work-page__btn {
+    //     grid-column: 5 / span 4;
+    //     grid-row: 2;
+    //     align-self: end;
+    //     z-index: 2;
+    
+    //     @media #{$lg} {
+    //         grid-row: auto;
+    //     }
+    // }
 }
